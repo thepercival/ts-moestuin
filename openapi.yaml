@@ -175,8 +175,8 @@ components:
           type: string
         size_m2:
           type: number
-        soil_type:
-          type: string
+        soil:
+          $ref: '#/components/schemas/Soil'
         location:
           type: string
         humidity:
@@ -229,7 +229,7 @@ components:
         pitch:
           $ref: '#/components/schemas/Pitch'
         soil:
-          type: string
+          $ref: '#/components/schemas/Soil'
         water:
           type: string
         temperature:
@@ -389,6 +389,53 @@ components:
         - laag
         - normaal
         - hoog
+    
+    Soil:
+      type: object
+      properties:
+        texture:
+          $ref: '#/components/schemas/SoilTexture'
+        drainage:
+          $ref: '#/components/schemas/SoilDrainage'
+        richness:
+          $ref: '#/components/schemas/SoilRichness'
+        ph:
+          $ref: '#/components/schemas/SoilPh'
+        notes:
+          type: string
+
+    SoilTexture:
+      enum:
+        - zand
+        - leem
+        - klei
+        - zavel
+        - veen
+        - potgrond
+        - compost
+
+    SoilDrainage:
+      enum:
+        - zeer droog
+        - matig droog
+        - normaal
+        - vochtig
+        - nat
+        - zeer goed drainerend
+        - goed drainerend
+
+    SoilRichness:
+      enum:
+        - arm
+        - normaal
+        - rijk
+
+    SoilPh:
+      enum:
+        - zuur
+        - licht zuur
+        - neutraal
+        - alkalisch
     
     location:
       enum:
