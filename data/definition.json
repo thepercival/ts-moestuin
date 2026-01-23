@@ -1,0 +1,148 @@
+{
+  "gardens": [
+    {
+      "name": "erica2c",
+      "beds": [
+        {
+          "name": "eerste-bed",
+          "size_m2": 1,
+          "soil_type": "compost",
+          "location": "outside",
+          "temperature_range_c": { "min": -10, "max": 35 },
+          "mulched": true,
+          "growings": [
+            { "plant_id": "croton", "planted_on": "2024-01-01" }
+          ]
+        },
+        {
+          "name": "tweede-bed",
+          "size_m2": 1,
+          "soil_type": "compost",
+          "location": "outside",
+          "temperature_range_c": { "min": -10, "max": 35 },
+          "mulched": true,
+          "growings": [
+            { "plant_id": "croton", "planted_on": "2024-01-01" }
+          ]
+        }
+      ]
+    },
+   {
+      "name": "woonkamer",
+      "beds": [
+        {
+          "name": "voorraam",
+          "size_m2": 5.0,
+          "soil_type": "compost",
+          "location": "inside",
+          "temperature_range_c": { "min": -10, "max": 35 },
+          "mulched": true,
+          "growings": [
+            { "plant_id": "tomato", "planted_on": "2025-04-20" },
+            { "plant_id": "basil", "planted_on": "2025-04-20" }
+          ]
+        }
+      ]
+    }
+  ],
+  "plants": [
+    {
+      "common_name": "tomato",
+      "scientific_name": "Solanum lycopersicum",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "",
+      "height_cm": 150,
+      "width_cm": 50,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": "loam",
+      "water": "regular, moderate; avoid waterlogging",
+      "temperature": { "minimum_c": 10, "optimal_minimum_c": 18, "optimal_max_c": 27 },
+      "humidity": "normaal",
+      "sowing": [ { "location": "inside", "description": "start indoors", "depth_cm": 1, "months": ["maa", "apr"] } ],
+      "planting": [ { "location": "outside", "description": "transplant after frost", "months": ["mei"] } ],
+      "flowering": { "location": "outside", "description": "summer flowers", "months": ["jun", "jul", "aug"] },
+      "reaping": { "description": "harvest ripe fruit", "months": ["jul", "aug", "sep"] },
+      "pruning": { "description": "remove suckers; support stems", "months": ["apr", "mei"] },
+      "winter_prep": "clear foliage; mulch roots in cold zones",
+      "diseases": { "common": ["early blight", "late blight", "fusarium wilt"], "prevention": ["crop rotation", "adequate airflow"] },
+      "fertilization": "balanced NPK during growth",
+      "toxic": "unripe fruit contain small amounts of solanine",
+      "repot": { "recommended": false, "notes": "transplant seedlings once" }
+    },
+    {
+      "common_name": "basil",
+      "scientific_name": "Ocimum basilicum",
+      "purpose": "eten",
+      "category": "kruiden",
+      "url": "",
+      "height_cm": 40,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": "rich, well-draining loam",
+      "water": "keep evenly moist; 1-2x/week depending on weather",
+      "temperature": { "minimum_c": 10, "optimal_minimum_c": 20, "optimal_max_c": 30 },
+      "humidity": "normaal",
+      "sowing": [ { "location": "inside", "description": "start indoors or sow after last frost", "depth_cm": 0.5, "months": ["maa", "apr"] } ],
+      "planting": [ { "location": "outside", "description": "transplant after frost", "months": ["mei"] } ],
+      "flowering": { "location": "outside", "description": "summer blooms", "months": ["jun", "jul", "aug"] },
+      "reaping": { "description": "harvest leaves as needed", "months": ["jun", "jul", "aug"] },
+      "pruning": { "description": "pinch tops to encourage bushiness", "months": ["mei", "jun"] },
+      "winter_prep": "protect from frost; move containers indoors",
+      "diseases": { "common": ["downy mildew", "root rot"], "prevention": ["avoid overhead watering", "good spacing"] },
+      "fertilization": "light feeding every 4-6 weeks",
+      "toxic": "edible",
+      "repot": { "recommended": true, "notes": "refresh container soil annually" }
+    },
+    {
+      "common_name": "lavender",
+      "scientific_name": "Lavandula angustifolia",
+      "purpose": "sier",
+      "category": "kruiden",
+      "url": "",
+      "height_cm": 60,
+      "width_cm": 60,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": "sandy, very well-draining",
+      "water": "deep, infrequent; drought-tolerant once established",
+      "temperature": { "minimum_c": -10, "optimal_minimum_c": 15, "optimal_max_c": 25 },
+      "humidity": "laag",
+      "sowing": [ { "location": "outside", "description": "can be started from seed or by cuttings", "depth_cm": 1, "months": ["apr", "mei"] } ],
+      "planting": [ { "location": "outside", "description": "plant in well-drained soil", "months": ["apr", "mei"] } ],
+      "flowering": { "location": "outside", "description": "summer flower spikes", "months": ["jun", "jul"] },
+      "reaping": { "description": "harvest flowers when open and fragrant", "months": ["jun", "jul"] },
+      "pruning": { "description": "light pruning after flowering to retain shape", "months": ["aug", "sep"] },
+      "winter_prep": "mulch and provide protection in harsh winters",
+      "diseases": { "common": ["root rot"], "prevention": ["excellent drainage"] },
+      "fertilization": "minimal feeding",
+      "toxic": "edible in small amounts",
+      "repot": { "recommended": true, "notes": "repot infrequently; refresh soil every ~24 months" }
+    },
+    {
+      "common_name": "croton",
+      "scientific_name": "Codiaeum variegatum",
+      "purpose": "sier",
+      "category": "bladgewassen",
+      "url": "https://plantengek.nl/verzorging/codiaeum/",
+      "height_cm": 45,
+      "width_cm": 30,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": "rijk, goed drainerend, licht zuur (tropisch of universeel potgrond)",
+      "water": "veel water, grond licht vochtig houden, niet laten uitdrogen",
+      "temperature": { "minimum_c": 18, "optimal_minimum_c": 20, "optimal_max_c": 29 },
+      "humidity": "hoog",
+      "sowing": [],
+      "planting": [],
+      "pruning": { "description": "regelmatig snoeien voor vorm en bossigheid, 2-3x per jaar", "months": ["maa", "jun", "sep"] },
+      "winter_prep": "warm houden, niet onder 18°C, luchtvochtigheid hoog houden",
+      "diseases": { "common": ["bladvlekken", "wortelrot"], "prevention": ["niet te nat", "goede luchtcirculatie", "regelmatig controleren"] },
+      "fertilization": "elke 2 weken tijdens groeiseizoen, rijk aan ijzer en magnesium",
+      "toxic": "hoog, giftig bij inname (voor kinderen en huisdieren)",
+      "repot": { "recommended": true, "notes": "jaarlijks verpotten in het voorjaar" }   
+    }
+  ]
+}

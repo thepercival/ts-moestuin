@@ -1,0 +1,412 @@
+openapi: "3.0.3"
+info:
+  title: ts-moestuin Garden API
+  contact:
+    name: CDK
+    email: cdkmoestuin@pm.me
+  version: "1.0.0"
+  description: OpenAPI description generated from definition.yaml (beds, plants, properties)
+servers:
+  - url: http://localhost:3000
+paths:
+  /gardens:
+    get:
+      summary: List all gardens
+      responses:
+        '200':
+          description: Array of gardens
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Garden'
+    post:
+      summary: Create a new garden
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Garden'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+
+  /garden/{gardenName}:
+    get:
+      summary: Get a single garden by name
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '404':
+          description: Not found
+    put:
+      summary: Update an existing garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Garden'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '404':
+          description: Not found
+  /gardens/{gardenName}/beds:
+    get:
+      summary: List all beds in a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of beds for the specified garden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bed'
+
+  /gardens/{gardenName}/beds/{bedName}:
+    get:
+      summary: Get a single bed by name within a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: bedName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Bed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bed'
+        '404':
+          description: Not found
+
+  /plants:
+    get:
+      summary: List all plant types
+      responses:
+        '200':
+          description: Array of plants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+
+  /plants/{common_name}:
+    get:
+      summary: Get plant details by common_name
+      parameters:
+        - name: common_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Plant
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plant'
+        '404':
+          description: Not found
+
+components:
+  schemas:
+    Garden:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        beds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bed'
+    Bed:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        size_m2:
+          type: number
+        soil_type:
+          type: string
+        location:
+          type: string
+        humidity:
+          type: string
+        temperature_range_c:
+          $ref: '#/components/schemas/TemperatureRange'
+        mulched:
+          type: boolean
+        growings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Growing'
+
+    Growing:
+      type: object
+      properties:
+        plant_id:
+          type: string
+        planted_on:
+          type: string
+          format: date
+
+    TemperatureRange:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+
+    Plant:
+      type: object
+      properties:
+        common_name:
+          type: string
+        scientific_name:
+          type: string
+        purpose:
+          $ref: '#/components/schemas/Purpose'
+        category:
+          $ref: '#/components/schemas/PlantCategory'
+        url:
+          type: string
+        height_cm:
+          type: number
+        width_cm:
+          type: number
+        perennial:
+          $ref: '#/components/schemas/Perennial'
+        pitch:
+          $ref: '#/components/schemas/Pitch'
+        soil:
+          type: string
+        water:
+          type: string
+        temperature:
+          $ref: '#/components/schemas/PlantTemperature'
+        humidity:
+          $ref: '#/components/schemas/PlantHumidity'
+        sowing:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sowing'
+        planting:
+          type: array
+          items:
+            $ref: '#/components/schemas/Planting'
+        flowering:
+          $ref: '#/components/schemas/Flowering'
+        reaping:
+          $ref: '#/components/schemas/Reaping'
+        pruning:
+          $ref: '#/components/schemas/Pruning'
+        winter_prep:
+          type: string
+        diseases:
+          $ref: '#/components/schemas/Diseases'
+        fertilization:
+          type: string
+        toxic:
+          type: string
+        repot:
+          $ref: '#/components/schemas/Repot'
+
+    PlantTemperature:
+      type: object
+      properties:
+        minimum_c:
+          type: number
+        optimal_minimum_c:
+          type: number
+        optimal_max_c:
+          type: number
+
+    Sowing:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/location'
+        description:
+          type: string
+        depth_cm:
+          type: number
+        distance_cm:
+          type: number
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+    Planting:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/location'
+        description:
+          type: string
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+
+    Flowering:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/location'
+        description:
+          type: string
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+
+    Reaping:
+      type: object
+      properties:
+        description:
+          type: string
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+
+    Pruning:
+      type: object
+      properties:
+        description:
+          type: string
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+
+    Diseases:
+      type: object
+      properties:
+        common:
+          type: array
+          items:
+            type: string
+        prevention:
+          type: array
+          items:
+            type: string
+
+    Repot:
+      type: object
+      properties:
+        recommended:
+          type: boolean
+        notes:
+          type: string
+
+    Purpose:
+      enum:
+        - sier
+        - eten
+
+    Perennial:
+      enum:
+        - eenjarig
+        - tweejarig
+        - meerjarig
+
+    Pitch:
+      enum:
+        - zon
+        - halfschaduw
+        - schaduw
+
+    PlantCategory:
+      enum:
+        - planten
+        - graan
+        - kruiden
+        - bloemen
+        - pootgoed
+        - wortelstokken
+        - koolgewassen
+        - bladgewassen
+        - vruchtgewassen
+        - wortelgewassen
+        - peulgewassen
+        - knoflook en ui
+        - zonnebloemen
+        - kiemgroenten
+    
+    PlantHumidity:
+      enum:
+        - laag
+        - normaal
+        - hoog
+    
+    location:
+      enum:
+        - inside
+        - outside
+        - greenhouse
+
+    Month:
+      enum:
+        - jan
+        - feb
+        - maa
+        - apr
+        - mei
+        - jun
+        - jul
+        - aug
+        - sep
+        - okt
+        - nov
+        - dec

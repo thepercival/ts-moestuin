@@ -1,0 +1,35 @@
+{
+  "name": "ts-moestuin",
+  "version": "1.0.0",
+  "description": "gardening management app",
+  "keywords": [
+    "gardening",
+    "management"
+  ],
+  "homepage": "https://github.com/thepercival/ts-moestuin#readme",
+  "bugs": {
+    "url": "https://github.com/thepercival/ts-moestuin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepercival/ts-moestuin.git"
+  },
+  "license": "ISC",
+  "author": "CDK",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node src/server.js",
+    "validate": "node src/validate.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  }
+}
