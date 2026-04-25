@@ -1,16 +1,21 @@
-openapi: "3.0.3"
+openapi: "3.1.0"
 info:
   title: ts-moestuin Garden API
   contact:
     name: CDK
     email: cdkmoestuin@pm.me
+  license:
+    name: GPL-3.0-or-later
+    url: https://spdx.org/licenses/GPL-3.0-or-later.html
   version: "1.0.0"
   description: OpenAPI description generated from definition.yaml (beds, plants, properties)
 servers:
-  - url: http://localhost:3000
+  - url: https://api.coensmoestuin.nl
+security: []
 paths:
   /gardens:
     get:
+      operationId: listGardens
       summary: List all gardens
       responses:
         '200':
@@ -21,24 +26,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Garden'
-    post:
-      summary: Create a new garden
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Garden'
-      responses:
-        '201':
-          description: Created
+        '400':
+          description: Invalid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Garden'
+                $ref: '#/components/schemas/Error'
 
-  /garden/{gardenName}:
+  /gardens/{gardenName}:
     get:
+      operationId: getGarden
       summary: Get a single garden by name
       parameters:
         - name: gardenName
@@ -55,8 +52,139 @@ paths:
                 $ref: '#/components/schemas/Garden'
         '404':
           description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/parts:
+    get:
+      operationId: listGardenParts
+      summary: List all parts in a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of parts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GardenPart'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/parts/{partName}/footprint:
     put:
-      summary: Update an existing garden
+      operationId: updateGardenPartFootprint
+      summary: Update position/size of a single garden part
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: partName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                part_type:
+                  type: string
+                  enum: [bed, path, embankment, water_tank, shed, greenhouse]
+                footprint:
+                  $ref: '#/components/schemas/PlanFootprint'
+              required:
+                - part_type
+                - footprint
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/parts/{partName}:
+    delete:
+      operationId: deleteGardenPart
+      summary: Delete a single garden part by name
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: partName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: part_type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [bed, path, embankment, water_tank, shed, greenhouse]
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/beds:
+    post:
+      operationId: createBed
+      summary: Add a bed part to a garden
       parameters:
         - name: gardenName
           in: path
@@ -68,37 +196,30 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Garden'
+              type: object
+              additionalProperties: false
+              properties:
+                bed:
+                  $ref: '#/components/schemas/Bed'
+              required:
+                - bed
       responses:
-        '200':
-          description: Updated
+        '201':
+          description: Updated garden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Garden'
-        '404':
-          description: Not found
-  /gardens/{gardenName}/beds:
-    get:
-      summary: List all beds in a garden
-      parameters:
-        - name: gardenName
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Array of beds for the specified garden
+        '400':
+          description: Invalid request
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Bed'
+                $ref: '#/components/schemas/Error'
 
   /gardens/{gardenName}/beds/{bedName}:
     get:
+      operationId: getBed
       summary: Get a single bed by name within a garden
       parameters:
         - name: gardenName
@@ -120,9 +241,624 @@ paths:
                 $ref: '#/components/schemas/Bed'
         '404':
           description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      operationId: patchBedUniqueProperties
+      summary: Patch unique bed properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: bedName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                bed:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    soil:
+                      $ref: '#/components/schemas/Soil'
+                    mulched:
+                      type: boolean
+                    growings:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Growing'
+                  minProperties: 1
+              required:
+                - bed
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/beds/{bedName}/growings/{growingIndex}/activities:
+    post:
+      operationId: addGrowingActivity
+      summary: Add an activity to an existing growing in a bed
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: bedName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: growingIndex
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                growing_activity:
+                  $ref: '#/components/schemas/GrowingActivity'
+              required:
+                - growing_activity
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/paths:
+    post:
+      operationId: createPath
+      summary: Add a path part to a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                path:
+                  $ref: '#/components/schemas/Path'
+              required:
+                - path
+      responses:
+        '201':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/paths/{pathName}:
+    get:
+      operationId: getPath
+      summary: Get a single path by name within a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pathName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Path
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Path'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      operationId: patchPathUniqueProperties
+      summary: Patch unique path properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pathName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                path:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    path_matter:
+                      $ref: '#/components/schemas/PathMatter'
+                    branches:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Path'
+                  minProperties: 1
+              required:
+                - path
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/embankments:
+    post:
+      operationId: createEmbankment
+      summary: Add an embankment part to a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                embankment:
+                  $ref: '#/components/schemas/Embankment'
+              required:
+                - embankment
+      responses:
+        '201':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/embankments/{embankmentName}:
+    patch:
+      operationId: patchEmbankmentUniqueProperties
+      summary: Patch unique embankment properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: embankmentName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                embankment:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    pitch_degrees:
+                      type: number
+                  minProperties: 1
+              required:
+                - embankment
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/water-tanks:
+    post:
+      operationId: createWaterTank
+      summary: Add a water tank part to a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                water_tank:
+                  $ref: '#/components/schemas/WaterTank'
+              required:
+                - water_tank
+      responses:
+        '201':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/water-tanks/{waterTankName}:
+    patch:
+      operationId: patchWaterTankUniqueProperties
+      summary: Patch unique water tank properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: waterTankName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                water_tank:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    capacity_liters:
+                      type: number
+                  minProperties: 1
+              required:
+                - water_tank
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/sheds:
+    post:
+      operationId: createShed
+      summary: Add a shed part to a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                shed:
+                  $ref: '#/components/schemas/Shed'
+              required:
+                - shed
+      responses:
+        '201':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/sheds/{shedName}:
+    patch:
+      operationId: patchShedUniqueProperties
+      summary: Patch unique shed properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: shedName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                shed:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    has_workbench:
+                      type: boolean
+                  minProperties: 1
+              required:
+                - shed
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/greenhouses:
+    post:
+      operationId: createGreenhouse
+      summary: Add a greenhouse part to a garden
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                greenhouse:
+                  $ref: '#/components/schemas/GreenhousePart'
+              required:
+                - greenhouse
+      responses:
+        '201':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /gardens/{gardenName}/greenhouses/{greenhouseName}:
+    patch:
+      operationId: patchGreenhouseUniqueProperties
+      summary: Patch unique greenhouse properties
+      parameters:
+        - name: gardenName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: greenhouseName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                greenhouse:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    wall_type:
+                      $ref: '#/components/schemas/GreenhouseWallType'
+                  minProperties: 1
+              required:
+                - greenhouse
+      responses:
+        '200':
+          description: Updated garden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Garden'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   /plants:
     get:
+      operationId: listPlants
       summary: List all plant types
       responses:
         '200':
@@ -133,9 +869,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Plant'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   /plants/{common_name}:
     get:
+      operationId: getPlant
       summary: Get plant details by common_name
       parameters:
         - name: common_name
@@ -152,65 +895,466 @@ paths:
                 $ref: '#/components/schemas/Plant'
         '404':
           description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /seeds:
+    get:
+      operationId: listSeeds
+      summary: List all seeds
+      responses:
+        '200':
+          description: Array of seeds
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Seed'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      operationId: createSeed
+      summary: Create a seed
+      description: >
+        Creates a seed entry. The combination of plant_id, variant_name,
+        webshop_name, and valid_until_year must be unique.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Seed'
+      responses:
+        '201':
+          description: Created seed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seed'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Duplicate seed identity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /seeds/{seedIndex}:
+    delete:
+      operationId: deleteSeed
+      summary: Delete seed by index
+      parameters:
+        - name: seedIndex
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+      responses:
+        '200':
+          description: Deleted seed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Seed'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /webshops:
+    get:
+      operationId: listWebshops
+      summary: List all webshops
+      responses:
+        '200':
+          description: Array of webshops
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Webshop'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
 components:
   schemas:
+    Error:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+        - message
+        - details
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
     Garden:
-      type: object
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object        
       required:
         - name
+        - location
+        - hardiness_region
+        - humidity
+        - temperature_range_c
+        - parts
+      unevaluatedProperties: false
       properties:
         name:
           type: string
-        beds:
-          type: array
-          items:
-            $ref: '#/components/schemas/Bed'
-    Bed:
-      type: object
-      required:
-        - name
-      properties:
-        name:
-          type: string
-        size_m2:
-          type: number
-        soil:
-          $ref: '#/components/schemas/Soil'
         location:
-          type: string
+          $ref: '#/components/schemas/Location'
+        hardiness_region:
+          $ref: '#/components/schemas/NLHardinessRegion'
         humidity:
-          type: string
+          $ref: '#/components/schemas/HumidityRange'
         temperature_range_c:
           $ref: '#/components/schemas/TemperatureRange'
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/GardenPart'
+    Bed:
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object
+      required:
+        - part_type
+        - name
+        - soil
+        - mulched
+        - growings
+      properties:
+        part_type:
+          type: string
+          enum:
+            - bed
+        name:
+          type: string          
+        soil:
+          $ref: '#/components/schemas/Soil'
         mulched:
           type: boolean
         growings:
           type: array
           items:
             $ref: '#/components/schemas/Growing'
+      unevaluatedProperties: false
 
-    Growing:
-      type: object
+    Path:
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object
+      unevaluatedProperties: false
       properties:
-        plant_id:
+        part_type:
           type: string
-        planted_on:
+          enum:
+            - path
+        name:
           type: string
-          format: date
+        path_matter:
+          $ref: '#/components/schemas/PathMatter'
+        branches:
+          type: array
+          items:
+            $ref: '#/components/schemas/Path'
+      required:
+        - part_type
+        - name
+        - path_matter
+        - branches
+
+    Embankment:
+      allOf:
+        - $ref: '#/components/schemas/Bed'
+        - type: object
+      unevaluatedProperties: false
+      properties:
+        part_type:
+          type: string
+          enum:
+            - embankment
+        pitch_degrees:
+          type: number
+      required:
+        - part_type
+        - pitch_degrees
+
+    CompostBin:
+      allOf:
+        - $ref: '#/components/schemas/Building'
+        - type: object      
+      unevaluatedProperties: false
+      properties:
+        part_type:
+          type: string
+          enum:
+            - compost_bin
+        capacity_liters:
+          type: number
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompostBinPart'
+      required:
+        - part_type
+        - capacity_liters
+        - parts
+
+    CompostBinPart:
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object        
+      unevaluatedProperties: false
+      properties:
+        fase:
+          enum:
+            - afval
+            - tussenfase
+            - compost
+      required:
+        - fase
+
+    WaterTank:
+      allOf:
+        - $ref: '#/components/schemas/Building'
+        - type: object        
+      unevaluatedProperties: false
+      properties:
+        part_type:
+          type: string
+          enum:
+            - water_tank
+        capacity_liters:
+          type: number
+      required:
+        - part_type
+        - capacity_liters
+
+    Shed:
+      allOf:
+        - $ref: '#/components/schemas/Building'
+        - type: object        
+      unevaluatedProperties: false
+      properties:
+        part_type:
+          type: string
+          enum:
+            - shed
+        has_workbench:
+          type: boolean
+      required:
+        - part_type
+        - has_workbench
+
+    Building:
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object        
+      properties:
+        name:
+          type: string
+        height_cm:
+          type: number
+      required:
+        - height_cm
+
+    Greenhouse:
+      allOf:
+        - $ref: '#/components/schemas/Garden'
+        - $ref: '#/components/schemas/Building'
+        - type: object
+      description: Greenhouse aggregate rooted in Garden.
+      unevaluatedProperties: false
+      properties:
+        wall_type:
+          $ref: '#/components/schemas/GreenhouseWallType'
+      required:
+        - wall_type
+
+    GreenhousePart:
+      allOf:
+        - $ref: '#/components/schemas/Building'
+        - type: object
+      description: Greenhouse part that can be placed inside a garden map.
+      unevaluatedProperties: false
+      properties:
+        part_type:
+          type: string
+          enum:
+            - greenhouse
+        name:
+          type: string
+        wall_type:
+          $ref: '#/components/schemas/GreenhouseWallType'
+      required:
+        - part_type
+        - name
+        - wall_type
+
+    GardenPart:
+      oneOf:
+        - $ref: '#/components/schemas/Bed'
+        - $ref: '#/components/schemas/Path'
+        - $ref: '#/components/schemas/Embankment'
+        - $ref: '#/components/schemas/WaterTank'
+        - $ref: '#/components/schemas/Shed'
+        - $ref: '#/components/schemas/GreenhousePart'
+      discriminator:
+        propertyName: part_type
+
+    PlanFootprint:
+      type: object
+      # additionalProperties: false
+      required: [position, height_cm, width_cm]
+      properties:
+        position:
+          $ref: "#/components/schemas/PlanPosition"
+        height_cm:
+          type: number
+          description: Lengte
+        width_cm:
+          type: number
+          description: Breedte
+        rotation_deg:
+          type: number
+          description: Optioneel, rotatie in graden
+          default: 0
 
     TemperatureRange:
       type: object
+      additionalProperties: false
       properties:
         min:
           type: number
         max:
           type: number
+      required:
+        - min
+        - max
 
-    Plant:
+    HumidityRange:
+      type: object
+      additionalProperties: false
+      properties:
+        min_pct:
+          type: number
+        max_pct:
+          type: number
+      required:
+        - min_pct
+        - max_pct
+
+    PlanPosition:
+      type: object
+      additionalProperties: false
+      properties:
+        x_cm:
+          type: number
+        y_cm:
+          type: number
+      required: 
+        - x_cm
+        - y_cm
+
+    Growing:
+      allOf:
+        - $ref: '#/components/schemas/PlanFootprint'
+        - type: object
+      properties:
+        year:
+          type: number
+        plant_id:
+          type: string
+        startActivityName:
+          $ref: '#/components/schemas/StartActivityName'
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GrowingActivity'
+        source:
+          oneOf:
+            - $ref: '#/components/schemas/SourceGrowing'
+            - $ref: '#/components/schemas/Seed'
+            - type: 'null'
+      unevaluatedProperties: false
+      required:
+        - plant_id
+        - source
+        - activities
+
+    SourceGrowing:
       type: object
       properties:
+        garden_name:
+          type: string
+        bed_name:
+          type: string
+      required:
+        - garden_name
+        - bed_name
+
+    GrowingActivity:
+      type: object
+      additionalProperties: false
+      properties:
+        date:
+          type: string
+          format: date
+        name:
+          $ref: '#/components/schemas/ActivityName'
+      required:
+        - date
+        - name
+
+    SowingProperties:
+      type: object
+      additionalProperties: true
+      properties:
+        sowing_depth_cm:
+          type: number
+        sowing_distance_cm:
+          type: number
+      required:
+        - sowing_depth_cm
+        - sowing_distance_cm
+
+    Plant:
+      allOf:
+        - $ref: '#/components/schemas/SowingProperties'
+        - type: object
+      type: object
+      unevaluatedProperties: false
+      properties:
         common_name:
+          type: string
+        description:
           type: string
         scientific_name:
           type: string
@@ -236,20 +1380,10 @@ components:
           $ref: '#/components/schemas/PlantTemperature'
         humidity:
           $ref: '#/components/schemas/PlantHumidity'
-        sowing:
+        preferred_activities:
           type: array
           items:
-            $ref: '#/components/schemas/Sowing'
-        planting:
-          type: array
-          items:
-            $ref: '#/components/schemas/Planting'
-        flowering:
-          $ref: '#/components/schemas/Flowering'
-        reaping:
-          $ref: '#/components/schemas/Reaping'
-        pruning:
-          $ref: '#/components/schemas/Pruning'
+            $ref: '#/components/schemas/PreferredActivity'
         winter_prep:
           type: string
         diseases:
@@ -260,78 +1394,48 @@ components:
           type: string
         repot:
           $ref: '#/components/schemas/Repot'
+      required:
+        - common_name
+        - description
+        - scientific_name
+        - purpose
+        - category
+        - url
+        - height_cm
+        - width_cm
+        - perennial
+        - pitch
+        - soil
+        - water
+        - temperature
+        - humidity
+        - sowing_depth_cm
+        - sowing_distance_cm
+        - preferred_activities
+        - winter_prep
+        - diseases
+        - fertilization
+        - toxic
+        - repot
 
     PlantTemperature:
       type: object
+      additionalProperties: false
       properties:
-        minimum_c:
+        min_c:
           type: number
-        optimal_minimum_c:
+        optimal_c:
           type: number
-        optimal_max_c:
+        max_c:
           type: number
-
-    Sowing:
-      type: object
-      properties:
-        location:
-          $ref: '#/components/schemas/location'
-        description:
-          type: string
-        depth_cm:
-          type: number
-        distance_cm:
-          type: number
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/Month'
-    Planting:
-      type: object
-      properties:
-        location:
-          $ref: '#/components/schemas/location'
-        description:
-          type: string
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/Month'
-
-    Flowering:
-      type: object
-      properties:
-        location:
-          $ref: '#/components/schemas/location'
-        description:
-          type: string
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/Month'
-
-    Reaping:
-      type: object
-      properties:
-        description:
-          type: string
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/Month'
-
-    Pruning:
-      type: object
-      properties:
-        description:
-          type: string
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/Month'
+      required:
+        - min_c
+        - optimal_c
+        - max_c
 
     Diseases:
       type: object
+      additionalProperties: false
       properties:
         common:
           type: array
@@ -341,14 +1445,35 @@ components:
           type: array
           items:
             type: string
+        notes:
+          type: string
+      required:
+        - common
+        - prevention
+        - notes
 
     Repot:
       type: object
+      additionalProperties: false
       properties:
         recommended:
           type: boolean
         notes:
           type: string
+      required:
+        - recommended
+        - notes
+      allOf:
+        - if:
+            properties:
+              recommended:
+                const: true
+            required:
+              - recommended
+          then:
+            properties:
+              notes:
+                minLength: 1
 
     Purpose:
       enum:
@@ -392,6 +1517,7 @@ components:
     
     Soil:
       type: object
+      additionalProperties: false
       properties:
         texture:
           $ref: '#/components/schemas/SoilTexture'
@@ -403,6 +1529,12 @@ components:
           $ref: '#/components/schemas/SoilPh'
         notes:
           type: string
+      required:
+        - texture
+        - drainage
+        - richness
+        - ph
+        - notes
 
     SoilTexture:
       enum:
@@ -413,14 +1545,13 @@ components:
         - veen
         - potgrond
         - compost
+        - zand, compost en grit
 
     SoilDrainage:
       enum:
-        - zeer droog
-        - matig droog
+        - zeer matig
+        - matig
         - normaal
-        - vochtig
-        - nat
         - zeer goed drainerend
         - goed drainerend
 
@@ -437,11 +1568,27 @@ components:
         - neutraal
         - alkalisch
     
-    location:
+    Location:
       enum:
         - binnen
-        - buiten
         - kas
+        - buiten
+
+    NLHardinessRegion:
+      type: string
+      description: >
+        Nederlandse winterhardheidsregio (USDA-gebaseerd).
+        Uitleg USDA hardiness zones: https://planthardiness.ars.usda.gov/.
+        NL-zone-indicatie (praktisch): https://www.plantmaps.com/interactive-netherlands-plant-hardiness-zone-map-celsius.php.
+        8a West-Nederland (-12.2 tot -9.4°C)
+        8b Oost-Nederland (-9.4 tot -6.7°C)
+        9b Kas in Nederland (-3.9 tot -1.1°C)
+        13 Woonkamer (15.6 tot 21.1°C)
+      enum:
+        - 8a
+        - 8b
+        - 9b
+        - '13'
 
     Month:
       enum:
@@ -457,3 +1604,95 @@ components:
         - okt
         - nov
         - dec
+    
+    ActivityName:
+      enum:
+        - Seeding
+        - Planting
+        - Reaping
+        - Pruning
+
+    PreferredActivity:
+      type: object
+      properties:            
+        activity_name:
+          $ref: '#/components/schemas/ActivityName'
+        location:
+          $ref: '#/components/schemas/Location'
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/Month'
+      required:
+        - activity_name
+        - location
+        - months
+
+    PathMatter:
+      enum:
+        - beton
+        - houtsnippers
+
+    GreenhouseWallType:
+      enum:
+        - glas
+        - polycarbonaat  
+
+    StartActivityName:
+      description: Subset van ActivityName; alleen start-activiteiten.
+      allOf:
+        - $ref: '#/components/schemas/ActivityName'
+        - type: string
+          enum:
+            - Seeding
+            - Planting
+
+    Seed:
+      allOf:
+        - $ref: '#/components/schemas/SowingProperties'
+        - type: object
+          description: >
+            Seed identity is defined by plant_id + variant_name + webshop_name +
+            valid_until_year.
+      unevaluatedProperties: false
+      properties:
+        plant_id:
+          type: string        
+        valid_until_year:
+          type: integer
+        bought_on:
+          type: string
+          format: date
+        webshop_name:
+          $ref: '#/components/schemas/WebshopName'
+        variant_name:
+          type: string
+        product_url:
+          type: string  
+        sowing_distance_cm:
+          type: number
+        prefered_activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreferredActivity'     
+      required:
+        - plant_id
+        - variant_name
+        - valid_until_year
+    Webshop:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          $ref: '#/components/schemas/WebshopName'
+        url:
+          type: string
+        zoek_url_template:
+          type: string
+      required:
+        - name
+        - url
+        - zoek_url_template
+
+    WebshopName:
+      type: string
