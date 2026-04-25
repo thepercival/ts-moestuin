@@ -2,52 +2,1248 @@
   "gardens": [
     {
       "name": "erica2c",
-      "beds": [
+      "position": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "height_cm": 2000,
+      "width_cm": 500,
+      "location": "buiten",
+      "hardiness_region": "8b",
+      "humidity": {
+        "min_pct": 55,
+        "max_pct": 90
+      },
+      "temperature_range_c": {
+        "min": -10,
+        "max": 35
+      },
+      "parts": [
         {
-          "name": "eerste-bed",
-          "size_m2": 1,
-          "soil": { "texture": "compost", "drainage": "goed drainerend", "richness": "rijk", "ph": "neutraal" },
-          "location": "buiten",
-          "temperature_range_c": { "min": -10, "max": 35 },
-          "mulched": true,
-          "growings": [
-            { "plant_id": "croton", "planted_on": "2024-01-01" }
+          "name": "hoofdpad",
+          "part_type": "path",
+          "position": {
+            "x_cm": 450,
+            "y_cm": 0
+          },
+          "height_cm": 9000,
+          "width_cm": 50,
+          "path_matter": "houtsnippers",
+          "branches": [
+            {
+              "name": "zijpad-1",
+              "part_type": "path",
+              "position": {
+                "x_cm": 50,
+                "y_cm": 1850
+              },
+              "height_cm": 50,
+              "width_cm": 400,
+              "path_matter": "houtsnippers",
+              "branches": []
+            },
+            {
+              "name": "zijpad-2",
+              "part_type": "path",
+              "position": {
+                "x_cm": 50,
+                "y_cm": 1700
+              },
+              "height_cm": 50,
+              "width_cm": 400,
+              "path_matter": "houtsnippers",
+              "branches": []
+            },
+            {
+              "name": "zijpad-3",
+              "part_type": "path",
+              "position": {
+                "x_cm": 50,
+                "y_cm": 1550
+              },
+              "height_cm": 50,
+              "width_cm": 400,
+              "path_matter": "houtsnippers",
+              "branches": []
+            },
+            {
+              "name": "zijpad-naar-schuur",
+              "part_type": "path",
+              "position": {
+                "x_cm": 50,
+                "y_cm": 1250
+              },
+              "height_cm": 50,
+              "width_cm": 400,
+              "path_matter": "houtsnippers",
+              "branches": []
+            },
+            {
+              "name": "zijpad-naar-appelboom",
+              "part_type": "path",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 850
+              },
+              "height_cm": 50,
+              "width_cm": 500,
+              "path_matter": "houtsnippers",
+              "branches": [
+                {
+                  "name": "zitplek-onder-appelboom",
+                  "part_type": "path",
+                  "position": {
+                    "x_cm": 50,
+                    "y_cm": 550
+                  },
+                  "height_cm": 300,
+                  "width_cm": 200,
+                  "path_matter": "houtsnippers",
+                  "branches": [
+                    {
+                      "name": "subpad-naar-sloot",
+                      "part_type": "path",
+                      "position": {
+                        "x_cm": 0,
+                        "y_cm": 300
+                      },
+                      "height_cm": 50,
+                      "width_cm": 400,
+                      "path_matter": "houtsnippers",
+                      "branches": [
+                        {
+                          "name": "pad-naar-sloot",
+                          "part_type": "path",
+                          "position": {
+                            "x_cm": 400,
+                            "y_cm": 200
+                          },
+                          "height_cm": 150,
+                          "width_cm": 50,
+                          "path_matter": "houtsnippers",
+                          "branches": [
+                            {
+                              "name": "pad-langs-sloot",
+                              "part_type": "path",
+                              "position": {
+                                "x_cm": 0,
+                                "y_cm": 200
+                              },
+                              "height_cm": 50,
+                              "width_cm": 400,
+                              "path_matter": "beton",
+                              "branches": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
-          "name": "tweede-bed",
-          "size_m2": 1,
-          "soil": { "texture": "compost", "drainage": "goed drainerend", "richness": "rijk", "ph": "neutraal" },
-          "location": "buiten",
-          "temperature_range_c": { "min": -10, "max": 35 },
+          "name": "eerste-bed-vanaf-pad",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 50,
+            "y_cm": 1750
+          },
+          "height_cm": 100,
+          "width_cm": 400,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
           "mulched": true,
           "growings": [
-            { "plant_id": "croton", "planted_on": "2024-01-01" }
+            {
+              "plant_id": "rode-biet",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Seeding",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "basilicum",
+              "position": {
+                "x_cm": 80,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Seeding",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "lenteui",
+              "position": {
+                "x_cm": 300,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 100,
+              "startActivityName": "Seeding",
+              "activities": [
+                {
+                  "date": "2026-04-10",
+                  "name": "Seeding"
+                }
+              ],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "snoepkomkommer",
+              "position": {
+                "x_cm": 200,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Seeding",
+              "activities": [],
+              "year": 2026,
+              "source": {
+                "garden_name": "erica2c",
+                "bed_name": "kas-rechts"
+              }
+            }
+          ]
+        },
+        {
+          "name": "tweede-bed-vanaf-pad",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 50,
+            "y_cm": 1600
+          },
+          "height_cm": 100,
+          "width_cm": 400,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": true,
+          "growings": [
+            {
+              "plant_id": "sla",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "andijvie",
+              "position": {
+                "x_cm": 80,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "veldsla",
+              "position": {
+                "x_cm": 160,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "witteboon",
+              "position": {
+                "x_cm": 240,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Seeding",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "knoflook",
+              "position": {
+                "x_cm": 320,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 80,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            }
+          ]
+        },
+        {
+          "name": "derde-bed-vanaf-pad",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 50,
+            "y_cm": 1450
+          },
+          "height_cm": 100,
+          "width_cm": 400,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "licht zuur",
+            "notes": ""
+          },
+          "mulched": true,
+          "growings": [
+            {
+              "plant_id": "aardbei",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 400,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            }
+          ]
+        },
+        {
+          "name": "vierde-bed-vanaf-pad",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 50,
+            "y_cm": 1300
+          },
+          "height_cm": 100,
+          "width_cm": 400,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": true,
+          "growings": [
+            {
+              "plant_id": "sintjanskruid",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 100,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2025,
+              "source": null
+            },
+            {
+              "plant_id": "kers-tomaat",
+              "position": {
+                "x_cm": 100,
+                "y_cm": 0
+              },
+              "height_cm": 50,
+              "width_cm": 100,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": {
+                "garden_name": "woonkamer",
+                "bed_name": "zaden-bed-2"
+              }
+            },
+            {
+              "plant_id": "trostomaat",
+              "position": {
+                "x_cm": 300,
+                "y_cm": 0
+              },
+              "height_cm": 100,
+              "width_cm": 100,
+              "startActivityName": "Planting",
+              "activities": [],
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "tomaat",
+              "year": 2026,
+              "source": {
+                "garden_name": "woonkamer",
+                "bed_name": "zaden-bed"
+              },
+              "position": {
+                "x_cm": 100,
+                "y_cm": 50
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": []
+            }
+          ]
+        },
+        {
+          "name": "vijfde-bed-vanaf-pad",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 100,
+            "y_cm": 1150
+          },
+          "height_cm": 100,
+          "width_cm": 350,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": true,
+          "growings": []
+        },
+        {
+          "name": "bed-parkeerzijde",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 1150
+          },
+          "height_cm": 750,
+          "width_cm": 50,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": true,
+          "growings": [
+            {
+              "plant_id": "rabarber",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 200
+              },
+              "height_cm": 200,
+              "width_cm": 50,
+              "activities": [],
+              "startActivityName": "Seeding",
+              "year": 2026,
+              "source": null
+            },
+            {
+              "plant_id": "courgette",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 500
+              },
+              "height_cm": 50,
+              "width_cm": 50,
+              "activities": [],
+              "year": 2026,
+              "source": null
+            }
+          ]
+        },
+        {
+          "part_type": "water_tank",
+          "name": "sloot",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 0
+          },
+          "width_cm": 500,
+          "height_cm": 100,
+          "capacity_liters": 200
+        },
+        {
+          "part_type": "greenhouse",
+          "name": "kas",
+          "position": {
+            "x_cm": 250,
+            "y_cm": 900
+          },
+          "width_cm": 200,
+          "height_cm": 250,
+          "wall_type": "polycarbonaat"
+        },
+        {
+          "part_type": "bed",
+          "name": "kas-links",
+          "position": {
+            "x_cm": 250,
+            "y_cm": 900
+          },
+          "width_cm": 50,
+          "height_cm": 250,
+          "mulched": false,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "watermeloen",
+              "year": 2026,
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 50,
+              "height_cm": 100,
+              "activities": [],
+              "source": null
+            },
+            {
+              "plant_id": "aubergine",
+              "year": 2026,
+              "source": {
+                "garden_name": "woonkamer",
+                "bed_name": "zaden-bed"
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 150
+              },
+              "width_cm": 50,
+              "height_cm": 50,
+              "activities": []
+            },
+            {
+              "plant_id": "peper",
+              "year": 2026,
+              "source": {
+                "garden_name": "woonkamer",
+                "bed_name": "zaden-bed"
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 200
+              },
+              "width_cm": 50,
+              "height_cm": 50,
+              "activities": []
+            }
+          ]
+        },
+        {
+          "part_type": "bed",
+          "name": "kas-rechts",
+          "position": {
+            "x_cm": 400,
+            "y_cm": 900
+          },
+          "width_cm": 50,
+          "height_cm": 250,
+          "mulched": false,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "paprika",
+              "year": 2026,
+              "source": {
+                "garden_name": "woonkamer",
+                "bed_name": "zaden-bed"
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 50,
+              "height_cm": 100,
+              "activities": []
+            },
+            {
+              "plant_id": "snoepkomkommer",
+              "year": 2026,
+              "source": {
+                "plant_id": "snoepkomkommer",
+                "valid_until_year": 2028,
+                "variant_name": "Kaikura F1",
+                "bought_on": "2026-04-10",
+                "webshop_name": "De Hobbytuinder",
+                "product_url": "https://www.dehobbytuinder.nl/zaden/bio-snack-komkommer-kaikura-f1-cucumis-sativus/",
+                "sowing_depth_cm": 2,
+                "sowing_distance_cm": 50
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 200
+              },
+              "width_cm": 50,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-04-10",
+                  "name": "Seeding"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "part_type": "bed",
+          "name": "bed-onder-appleboom",
+          "position": {
+            "x_cm": 250,
+            "y_cm": 550
+          },
+          "width_cm": 150,
+          "height_cm": 250,
+          "mulched": false,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "courgette",
+              "year": 2026,
+              "source": {
+                "plant_id": "courgette",
+                "variant_name": "Groene F1",
+                "sowing_depth_cm": 2,
+                "sowing_distance_cm": 60,
+                "valid_until_year": 2026
+              },
+              "position": {
+                "x_cm": 50,
+                "y_cm": 200
+              },
+              "width_cm": 50,
+              "height_cm": 50,
+              "activities": []
+            },
+            {
+              "plant_id": "aardappel, middelvroeg",
+              "year": 2026,
+              "source": {
+                "plant_id": "aardappel, middelvroeg",
+                "valid_until_year": 2026,
+                "variant_name": "Linda",
+                "bought_on": "2026-04-01",
+                "product_url": "https://www.vreeken.nl/406350-aardappels-linda",
+                "sowing_depth_cm": 10,
+                "sowing_distance_cm": 45
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 150,
+              "height_cm": 200,
+              "activities": [
+                {
+                  "date": "2026-03-21",
+                  "name": "Planting"
+                }
+              ]
+            }
           ]
         }
       ]
     },
-   {
+    {
+      "name": "erica2b",
+      "position": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "height_cm": 2000,
+      "width_cm": 500,
+      "location": "buiten",
+      "hardiness_region": "8b",
+      "humidity": {
+        "min_pct": 55,
+        "max_pct": 90
+      },
+      "temperature_range_c": {
+        "min": -10,
+        "max": 35
+      },
+      "parts": [
+        {
+          "part_type": "water_tank",
+          "name": "sloot",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 0
+          },
+          "width_cm": 500,
+          "height_cm": 100,
+          "capacity_liters": 200
+        },
+        {
+          "part_type": "bed",
+          "name": "border-2b-2c",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 800
+          },
+          "width_cm": 100,
+          "height_cm": 1200,
+          "mulched": false,
+          "soil": {
+            "texture": "zand, compost en grit",
+            "drainage": "goed drainerend",
+            "richness": "normaal",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "duizendknoop",
+              "year": 2026,
+              "source": {
+                "plant_id": "duizendknoop",
+                "valid_until_year": 2026,
+                "variant_name": "",
+                "bought_on": "2025-04-11",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 50
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 100,
+              "height_cm": 100,
+              "activities": [
+                {
+                  "date": "2025-03-15",
+                  "name": "Seeding"
+                },
+                {
+                  "date": "2026-04-11",
+                  "name": "Planting"
+                }
+              ]
+            },
+            {
+              "plant_id": "sintjanskruid",
+              "year": 2026,
+              "source": {
+                "plant_id": "sintjanskruid",
+                "valid_until_year": 2026,
+                "variant_name": "",
+                "bought_on": "2026-04-11",
+                "sowing_depth_cm": 0.5,
+                "sowing_distance_cm": 30
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 150
+              },
+              "width_cm": 100,
+              "height_cm": 100,
+              "activities": []
+            },
+            {
+              "plant_id": "blauwe druifjes",
+              "year": 2026,
+              "source": {
+                "plant_id": "blauwe druifjes",
+                "valid_until_year": 2026,
+                "variant_name": "",
+                "bought_on": "2026-04-11",
+                "sowing_depth_cm": 8,
+                "sowing_distance_cm": 8
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 1100
+              },
+              "width_cm": 100,
+              "height_cm": 100,
+              "activities": [
+                {
+                  "date": "2025-03-14",
+                  "name": "Seeding"
+                },
+                {
+                  "date": "2026-04-11",
+                  "name": "Planting"
+                }
+              ]
+            },
+            {
+              "plant_id": "lavendel - bloem",
+              "year": 2026,
+              "source": {
+                "plant_id": "lavendel - bloem",
+                "valid_until_year": 2026,
+                "variant_name": "",
+                "bought_on": "2026-04-11",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 75
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 1000
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2025-03-12",
+                  "name": "Seeding"
+                },
+                {
+                  "date": "2026-04-11",
+                  "name": "Planting"
+                }
+              ]
+            },
+            {
+              "plant_id": "lavendel - kruid",
+              "year": 2026,
+              "source": {
+                "plant_id": "lavendel - kruid",
+                "valid_until_year": 2026,
+                "variant_name": "",
+                "bought_on": "2026-04-11",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 75
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 950
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2025-03-11",
+                  "name": "Seeding"
+                },
+                {
+                  "date": "2026-04-11",
+                  "name": "Planting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "part_type": "path",
+          "name": "hoofdpad",
+          "position": {
+            "x_cm": 450,
+            "y_cm": 100
+          },
+          "width_cm": 50,
+          "height_cm": 1900,
+          "path_matter": "beton",
+          "branches": []
+        },
+        {
+          "part_type": "path",
+          "name": "border-pad",
+          "position": {
+            "x_cm": 100,
+            "y_cm": 800
+          },
+          "width_cm": 50,
+          "height_cm": 1200,
+          "path_matter": "beton",
+          "branches": []
+        }
+      ]
+    },
+    {
       "name": "woonkamer",
-      "beds": [
+      "position": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "height_cm": 600,
+      "width_cm": 600,
+      "location": "binnen",
+      "hardiness_region": "13",
+      "humidity": {
+        "min_pct": 40,
+        "max_pct": 60
+      },
+      "temperature_range_c": {
+        "min": -10,
+        "max": 35
+      },
+      "parts": [
         {
           "name": "voorraam",
-          "size_m2": 5.0,
-          "soil": { "texture": "potgrond", "drainage": "goed drainerend", "richness": "rijk", "ph": "neutraal" },
-          "location": "binnen",
-          "temperature_range_c": { "min": -10, "max": 35 },
+          "part_type": "bed",
+          "position": {
+            "x_cm": 250,
+            "y_cm": 0
+          },
+          "height_cm": 50,
+          "width_cm": 300,
+          "soil": {
+            "texture": "potgrond",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
           "mulched": true,
           "growings": [
-            { "plant_id": "tomato", "planted_on": "2025-04-20" },
-            { "plant_id": "basil", "planted_on": "2025-04-20" }
+            {
+              "plant_id": "wonderstruik",
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "height_cm": 50,
+              "width_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-20",
+                  "name": "Pruning"
+                }
+              ],
+              "startActivityName": "Planting",
+              "year": 2026,
+              "source": null
+            }
           ]
+        },
+        {
+          "name": "achterraam",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 50,
+            "y_cm": 550
+          },
+          "height_cm": 50,
+          "width_cm": 500,
+          "soil": {
+            "texture": "potgrond",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": false,
+          "growings": []
+        },
+        {
+          "part_type": "path",
+          "name": "hoofdpad",
+          "position": {
+            "x_cm": 250,
+            "y_cm": 50
+          },
+          "width_cm": 50,
+          "height_cm": 500,
+          "path_matter": "beton",
+          "branches": []
+        },
+        {
+          "part_type": "bed",
+          "name": "zaden-bed",
+          "position": {
+            "x_cm": 100,
+            "y_cm": 250
+          },
+          "width_cm": 100,
+          "height_cm": 250,
+          "mulched": false,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "tomaat",
+              "year": 2026,
+              "source": {
+                "plant_id": "tomaat",
+                "variant_name": "Moneymaker",
+                "valid_until_year": 2029,
+                "bought_on": "2026-03-01",
+                "webshop_name": "Van der Wal Zaden",
+                "product_url": "https://www.zaadhandelvanderwal.nl/nl/shop/zaadgids-online/groentezaden-fijnzadig/tomaten/moneymaker",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 50
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 50
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-01",
+                  "name": "Seeding"
+                }
+              ]
+            },
+            {
+              "plant_id": "paprika",
+              "year": 2026,
+              "source": {
+                "plant_id": "paprika",
+                "valid_until_year": 2029,
+                "variant_name": "Yolo Wonder",
+                "bought_on": "2025-02-01",
+                "webshop_name": "FloraSelf",
+                "product_url": "https://www.floraselfstore.com/floraself-paprika-yolo-wonder-groentezaden/",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 45
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 100
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-01",
+                  "name": "Seeding"
+                }
+              ]
+            },
+            {
+              "plant_id": "aubergine",
+              "year": 2026,
+              "source": {
+                "plant_id": "aubergine",
+                "valid_until_year": 2026,
+                "variant_name": "Falcon",
+                "bought_on": "2024-03-01",
+                "webshop_name": "FloraSelf",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 60
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 150
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": []
+            },
+            {
+              "plant_id": "peper",
+              "year": 2026,
+              "source": {
+                "plant_id": "peper",
+                "valid_until_year": 2028,
+                "variant_name": "Yalova Carliston",
+                "bought_on": "2026-03-21",
+                "webshop_name": "Vreeken",
+                "product_url": "https://www.vreeken.nl/208050-peper-carliston-mild-yalova-carliston-341",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 40
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 200
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-01",
+                  "name": "Seeding"
+                }
+              ]
+            },
+            {
+              "plant_id": "peper",
+              "year": 2026,
+              "source": {
+                "plant_id": "peper",
+                "valid_until_year": 2029,
+                "variant_name": "Jalapeno",
+                "bought_on": "2026-03-21",
+                "webshop_name": "Van der Wal Zaden",
+                "product_url": "https://www.zaadhandelvanderwal.nl/nl/shop/biologisch-geteelde-zaden/biologisch-geteelde-groentezaden/paprika-pepers-biologisch-geteeld/pepers-jalapeno-bio",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 40
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-01",
+                  "name": "Seeding"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "part_type": "bed",
+          "name": "zaden-bed-2",
+          "position": {
+            "x_cm": 400,
+            "y_cm": 250
+          },
+          "width_cm": 100,
+          "height_cm": 250,
+          "mulched": false,
+          "soil": {
+            "texture": "compost",
+            "drainage": "goed drainerend",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "growings": [
+            {
+              "plant_id": "kers-tomaat",
+              "year": 2026,
+              "source": {
+                "plant_id": "kers-tomaat",
+                "valid_until_year": 2027,
+                "variant_name": "Horti Tops",
+                "bought_on": "2026-03-21",
+                "webshop_name": "De Hobbytuinder",
+                "product_url": "https://www.dehobbytuinder.nl/zaden/groentezaden/tomaten/tomaten-cherry-4-kleuren-solanum-lycopersicum/",
+                "sowing_depth_cm": 1,
+                "sowing_distance_cm": 50
+              },
+              "position": {
+                "x_cm": 0,
+                "y_cm": 0
+              },
+              "width_cm": 100,
+              "height_cm": 50,
+              "activities": [
+                {
+                  "date": "2026-03-01",
+                  "name": "Seeding"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "achtertuin",
+      "position": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "height_cm": 400,
+      "width_cm": 90,
+      "location": "buiten",
+      "hardiness_region": "8b",
+      "humidity": {
+        "min_pct": 55,
+        "max_pct": 90
+      },
+      "temperature_range_c": {
+        "min": -10,
+        "max": 35
+      },
+      "parts": [
+        {
+          "name": "buren-kant",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 0
+          },
+          "height_cm": 400,
+          "width_cm": 50,
+          "soil": {
+            "texture": "klei",
+            "drainage": "matig",
+            "richness": "rijk",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": false,
+          "growings": []
+        },
+        {
+          "name": "plein-kant",
+          "part_type": "bed",
+          "position": {
+            "x_cm": 0,
+            "y_cm": 100
+          },
+          "height_cm": 400,
+          "width_cm": 50,
+          "soil": {
+            "texture": "klei",
+            "drainage": "matig",
+            "richness": "normaal",
+            "ph": "neutraal",
+            "notes": ""
+          },
+          "mulched": false,
+          "growings": []
         }
       ]
     }
   ],
   "plants": [
     {
-      "common_name": "tomato",
+      "common_name": "tomaat",
+      "description": "",
       "scientific_name": "Solanum lycopersicum",
       "purpose": "eten",
       "category": "vruchtgewassen",
@@ -56,23 +1252,530 @@
       "width_cm": 50,
       "perennial": "eenjarig",
       "pitch": "zon",
-      "soil": { "texture": "leem", "drainage": "goed drainerend", "richness": "normaal", "ph": "neutraal" },
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
       "water": "regelmatig, matig; voorkom waterverzadiging",
-      "temperature": { "minimum_c": 10, "optimal_minimum_c": 18, "optimal_max_c": 27 },
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 22,
+        "max_c": 27
+      },
       "humidity": "normaal",
-      "sowing": [ { "location": "binnen", "description": "binnen starten", "depth_cm": 1, "months": ["maa", "apr"] } ],
-      "planting": [ { "location": "buiten", "description": "uitplanten na vorst", "months": ["mei"] } ],
-      "flowering": { "location": "buiten", "description": "zomerbloei", "months": ["jun", "jul", "aug"] },
-      "reaping": { "description": "oogst rijpe vruchten", "months": ["jul", "aug", "sep"] },
-      "pruning": { "description": "verwijder okselscheuten; ondersteun stengels", "months": ["apr", "mei"] },
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
       "winter_prep": "verwijder bladeren; mulch wortels in koude zones",
-      "diseases": { "common": ["vroege bladschimmel", "late bladschimmel", "fusarium verwelking"], "prevention": ["gewasrotatie", "goede luchtstroom"] },
+      "diseases": {
+        "common": [
+          "vroege bladschimmel",
+          "late bladschimmel",
+          "fusarium verwelking"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "goede luchtstroom"
+        ],
+        "notes": ""
+      },
       "fertilization": "gebalanceerde NPK tijdens groei",
       "toxic": "onrijpe vruchten bevatten kleine hoeveelheden solanine",
-      "repot": { "recommended": false, "notes": "zaailingen eenmalig overplanten" }
+      "repot": {
+        "recommended": false,
+        "notes": "zaailingen eenmalig overplanten"
+      }
     },
     {
-      "common_name": "basil",
+      "common_name": "paprika",
+      "description": "",
+      "scientific_name": "Capsicum annuum",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Paprika",
+      "height_cm": 60,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": "vruchtbare, humusrijke en goed drainerende grond; in Nederland bij voorkeur in kas of op een zeer warme beschutte plek"
+      },
+      "water": "regelmatig en gelijkmatig vochtig houden; niet laten uitdrogen, maar ook niet te nat",
+      "temperature": {
+        "min_c": 12,
+        "optimal_c": 24,
+        "max_c": 30
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 45,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "feb",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": [
+            "feb",
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": [
+            "mei",
+            "jun",
+            "jul"
+          ]
+        }
+      ],
+      "winter_prep": "niet winterhard; in Nederland meestal als eenjarige telen en voor de eerste koude nachten opruimen of potten tijdelijk binnen zetten",
+      "diseases": {
+        "common": [
+          "neusrot",
+          "bladluizen",
+          "grauwe schimmel",
+          "spint"
+        ],
+        "prevention": [
+          "gelijkmatig water geven",
+          "goede ventilatie",
+          "regelmatig controleren op bladluizen en spint"
+        ],
+        "notes": "in Nederlandse kassen komen ook tripsen en wortelrot voor; vruchtzetting neemt af boven 30C"
+      },
+      "fertilization": "regelmatig voeden met kaliumrijke mest zodra de bloei start",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": true,
+        "notes": "in Nederland zaailingen meestal eerst verspenen of eenmaal oppotten en pas later uitplanten in kas, pot of zeer warme buitenplek"
+      }
+    },
+    {
+      "common_name": "aubergine",
+      "description": "",
+      "scientific_name": "Solanum melongena",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Aubergine_(plant)",
+      "height_cm": 80,
+      "width_cm": 50,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": "in Nederland bij voorkeur in kas of op een zeer warme, beschutte plek"
+      },
+      "water": "regelmatig en gelijkmatig vochtig houden; vooral tijdens vruchtzetting niet laten uitdrogen",
+      "temperature": {
+        "min_c": 13,
+        "optimal_c": 24,
+        "max_c": 32
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 60,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "feb",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": [
+            "feb",
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": [
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug"
+          ]
+        }
+      ],
+      "winter_prep": "niet winterhard; in Nederland meestal als eenjarige telen en voor koude nachten beschermen of opruimen",
+      "diseases": {
+        "common": [
+          "bladluizen",
+          "spint",
+          "witte vlieg",
+          "grauwe schimmel"
+        ],
+        "prevention": [
+          "warme, zonnige standplaats",
+          "goede ventilatie",
+          "gelijkmatig water geven",
+          "regelmatig bladonderzijde controleren"
+        ],
+        "notes": "bij te lage temperaturen is vruchtzetting zwak"
+      },
+      "fertilization": "vanaf de eerste bloei elke 2 weken kaliumrijke voeding",
+      "toxic": "niet toxisch wanneer rijp en bereid; onrijpe delen bevatten kleine hoeveelheden solanine",
+      "repot": {
+        "recommended": true,
+        "notes": "zaailingen in Nederland meestal eerst verspenen en eenmaal oppotten voor uitplanten in kas of grote pot"
+      }
+    },
+    {
+      "common_name": "peper",
+      "description": "",
+      "scientific_name": "Capsicum annuum",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Chilipeper",
+      "height_cm": 70,
+      "width_cm": 35,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": "in Nederland bij voorkeur in kas of op een zeer warme, beschutte plek"
+      },
+      "water": "regelmatig en gelijkmatig vochtig houden; niet laten uitdrogen en natte voeten vermijden",
+      "temperature": {
+        "min_c": 12,
+        "optimal_c": 25,
+        "max_c": 32
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 40,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "feb",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; in Nederland meestal als eenjarige telen en voor koude nachten beschermen of opruimen",
+      "diseases": {
+        "common": [
+          "bladluizen",
+          "spint",
+          "trips",
+          "witte vlieg"
+        ],
+        "prevention": [
+          "goede ventilatie",
+          "warme en zonnige standplaats",
+          "gelijkmatig water geven",
+          "regelmatig controleren op plaaginsecten"
+        ],
+        "notes": "in Nederlandse kassen is extra alertheid nodig op trips en spint tijdens warme, droge periodes"
+      },
+      "fertilization": "vanaf bloei regelmatig kaliumrijke voeding geven",
+      "toxic": "niet toxisch, maar capsaicine kan huid en ogen irriteren",
+      "repot": {
+        "recommended": true,
+        "notes": "zaailingen in Nederland meestal eerst verspenen en eenmaal oppotten voor uitplanten in kas, pot of warme buitenplek"
+      }
+    },
+    {
+      "common_name": "basilicum",
+      "description": "",
       "scientific_name": "Ocimum basilicum",
       "purpose": "eten",
       "category": "kruiden",
@@ -81,23 +1784,121 @@
       "width_cm": 30,
       "perennial": "eenjarig",
       "pitch": "zon",
-      "soil": { "texture": "leem", "drainage": "goed drainerend", "richness": "rijk", "ph": "neutraal" },
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
       "water": "houd gelijkmatig vochtig; 1-2x/week afhankelijk van weer",
-      "temperature": { "minimum_c": 10, "optimal_minimum_c": 20, "optimal_max_c": 30 },
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 25,
+        "max_c": 30
+      },
       "humidity": "normaal",
-      "sowing": [ { "location": "binnen", "description": "binnen starten of zaaien na laatste vorst", "depth_cm": 0.5, "months": ["maa", "apr"] } ],
-      "planting": [ { "location": "buiten", "description": "uitplanten na vorst", "months": ["mei"] } ],
-      "flowering": { "location": "buiten", "description": "zomerbloei", "months": ["jun", "jul", "aug"] },
-      "reaping": { "description": "oogst bladeren indien nodig", "months": ["jun", "jul", "aug"] },
-      "pruning": { "description": "knip toppen voor bossigheid", "months": ["mei", "jun"] },
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 15,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
       "winter_prep": "bescherm tegen vorst; verplaats potten naar binnen",
-      "diseases": { "common": ["valse meeldauw", "wortelrot"], "prevention": ["vermijd water op bladeren", "goede afstand tussen planten"] },
+      "diseases": {
+        "common": [
+          "valse meeldauw",
+          "wortelrot"
+        ],
+        "prevention": [
+          "vermijd water op bladeren",
+          "goede afstand tussen planten"
+        ],
+        "notes": ""
+      },
       "fertilization": "licht voeden elke 4-6 weken",
       "toxic": "eetbaar",
-      "repot": { "recommended": true, "notes": "ververs potgrond jaarlijks" }
+      "repot": {
+        "recommended": true,
+        "notes": "ververs potgrond jaarlijks"
+      }
     },
     {
-      "common_name": "lavender",
+      "common_name": "lavendel - kruid",
+      "description": "",
       "scientific_name": "Lavandula angustifolia",
       "purpose": "sier",
       "category": "kruiden",
@@ -106,23 +1907,116 @@
       "width_cm": 60,
       "perennial": "meerjarig",
       "pitch": "zon",
-      "soil": { "texture": "zand", "drainage": "zeer goed drainerend", "richness": "arm", "ph": "neutraal" },
+      "soil": {
+        "texture": "zand",
+        "drainage": "zeer goed drainerend",
+        "richness": "arm",
+        "ph": "neutraal",
+        "notes": ""
+      },
       "water": "diep, onregelmatig; droogte-tolerant als eenmaal gevestigd",
-      "temperature": { "minimum_c": -10, "optimal_minimum_c": 15, "optimal_max_c": 25 },
+      "temperature": {
+        "min_c": -10,
+        "optimal_c": 20,
+        "max_c": 25
+      },
       "humidity": "laag",
-      "sowing": [ { "location": "buiten", "description": "kan gestart worden uit zaad of stekken", "depth_cm": 1, "months": ["apr", "mei"] } ],
-      "planting": [ { "location": "buiten", "description": "plant in goed doorlatende grond", "months": ["apr", "mei"] } ],
-      "flowering": { "location": "buiten", "description": "zomerbloeiaren", "months": ["jun", "jul"] },
-      "reaping": { "description": "oogst bloemen wanneer open en geurig", "months": ["jun", "jul"] },
-      "pruning": { "description": "licht snoeien na bloei om vorm te behouden", "months": ["aug", "sep"] },
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 75,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
       "winter_prep": "mulch en bescherming bieden in strenge winters",
-      "diseases": { "common": ["wortelrot"], "prevention": ["uitstekende drainage"] },
+      "diseases": {
+        "common": [
+          "wortelrot"
+        ],
+        "prevention": [
+          "uitstekende drainage"
+        ],
+        "notes": ""
+      },
       "fertilization": "minimale bemesting",
       "toxic": "eetbaar in kleine hoeveelheden",
-      "repot": { "recommended": true, "notes": "zelden verpotten; ververs grond elke ~24 maanden" }
+      "repot": {
+        "recommended": true,
+        "notes": "zelden verpotten; ververs grond elke ~24 maanden"
+      }
     },
     {
-      "common_name": "croton",
+      "common_name": "wonderstruik",
+      "description": "",
       "scientific_name": "Codiaeum variegatum",
       "purpose": "sier",
       "category": "bladgewassen",
@@ -131,18 +2025,3041 @@
       "width_cm": 30,
       "perennial": "meerjarig",
       "pitch": "zon",
-      "soil": { "texture": "potgrond", "drainage": "goed drainerend", "richness": "rijk", "ph": "licht zuur", "notes": "tropisch of universeel potgrond" },
+      "soil": {
+        "texture": "potgrond",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "licht zuur",
+        "notes": "tropisch of universeel potgrond"
+      },
       "water": "veel water, grond licht vochtig houden, niet laten uitdrogen",
-      "temperature": { "minimum_c": 18, "optimal_minimum_c": 20, "optimal_max_c": 29 },
+      "temperature": {
+        "min_c": 18,
+        "optimal_c": 24,
+        "max_c": 29
+      },
       "humidity": "hoog",
-      "sowing": [],
-      "planting": [],
-      "pruning": { "description": "regelmatig snoeien voor vorm en bossigheid, 2-3x per jaar", "months": ["maa", "jun", "sep"] },
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 30,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": [
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
       "winter_prep": "warm houden, niet onder 18°C, luchtvochtigheid hoog houden",
-      "diseases": { "common": ["bladvlekken", "wortelrot"], "prevention": ["niet te nat", "goede luchtcirculatie", "regelmatig controleren"] },
+      "diseases": {
+        "common": [
+          "bladvlekken",
+          "wortelrot"
+        ],
+        "prevention": [
+          "niet te nat",
+          "goede luchtcirculatie",
+          "regelmatig controleren"
+        ],
+        "notes": ""
+      },
       "fertilization": "elke 2 weken tijdens groeiseizoen, rijk aan ijzer en magnesium",
       "toxic": "hoog, giftig bij inname (voor kinderen en huisdieren)",
-      "repot": { "recommended": true, "notes": "jaarlijks verpotten in het voorjaar" }   
+      "repot": {
+        "recommended": true,
+        "notes": "jaarlijks verpotten in het voorjaar"
+      }
+    },
+    {
+      "common_name": "rode-biet",
+      "description": "",
+      "scientific_name": "Beta vulgaris subsp. vulgaris var. ruba",
+      "purpose": "eten",
+      "category": "wortelgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Rode_biet",
+      "height_cm": 30,
+      "width_cm": 15,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, gelijkmatig vochtig houden",
+      "temperature": {
+        "min_c": 5,
+        "optimal_c": 12,
+        "max_c": 25
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 10,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "voor bewaring oogsten voor vorst",
+      "diseases": {
+        "common": [
+          "bietekevertje",
+          "bietevlieg",
+          "wortelbrand",
+          "schurft"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "gezond zaaigoed"
+        ],
+        "notes": ""
+      },
+      "fertilization": "matig bemesten, te veel stikstof geeft bladgroei",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "In Nederlandse vollegrondsteelt doorgaans niet verpotten; alleen bij voorzaai eventueel eenmaal verspenen/oppotten voor uitplanten."
+      }
+    },
+    {
+      "common_name": "lenteui",
+      "description": "",
+      "scientific_name": "Allium fistulosum",
+      "purpose": "eten",
+      "category": "knoflook en ui",
+      "url": "https://nl.wikipedia.org/wiki/Lenteui",
+      "height_cm": 30,
+      "width_cm": 10,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, houd gelijkmatig vochtig",
+      "temperature": {
+        "min_c": 5,
+        "optimal_c": 15,
+        "max_c": 24
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 5,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei",
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "kan lichte vorst verdragen",
+      "diseases": {
+        "common": [
+          "uivlieg",
+          "valse meeldauw"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "goede ventilatie"
+        ],
+        "notes": ""
+      },
+      "fertilization": "licht bemesten tijdens groei",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "In Nederlandse vollegrondsteelt meestal niet verpotten; alleen bij opkweek in pot eventueel eenmaal oppotten voor uitplanten."
+      }
+    },
+    {
+      "common_name": "snoepkomkommer",
+      "description": "",
+      "scientific_name": "Cucumis sativus",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Komkommer",
+      "height_cm": 200,
+      "width_cm": 60,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig en veel, houd grond constant vochtig",
+      "temperature": {
+        "min_c": 15,
+        "optimal_c": 24,
+        "max_c": 30
+      },
+      "humidity": "hoog",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 50,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder na laatste oogst",
+      "diseases": {
+        "common": [
+          "meeldauw",
+          "spint",
+          "komkommermozaiekvirus"
+        ],
+        "prevention": [
+          "goede ventilatie",
+          "vermijd water op bladeren",
+          "gewasrotatie"
+        ],
+        "notes": ""
+      },
+      "fertilization": "regelmatig voeden tijdens groei, kaliumrijk",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "In Nederland meestal opkweken en daarna uitplanten; geen herhaald verpotten nodig behalve één keer oppotten van zaailing."
+      }
+    },
+    {
+      "common_name": "courgette",
+      "description": "",
+      "scientific_name": "Cucurbita pepo",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Courgette",
+      "height_cm": 200,
+      "width_cm": 50,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig en veel, houd grond gelijkmatig vochtig",
+      "temperature": {
+        "min_c": 15,
+        "optimal_c": 22,
+        "max_c": 30
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 60,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder na laatste oogst",
+      "diseases": {
+        "common": [
+          "meeldauw",
+          "bladluizen",
+          "virusziekten"
+        ],
+        "prevention": [
+          "goede luchtstroom",
+          "gewasrotatie",
+          "vermijd water op bladeren"
+        ],
+        "notes": ""
+      },
+      "fertilization": "regelmatig voeden, vooral tijdens vruchtzetting",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Voor Nederlandse moestuin meestal niet verpotten na uitplanten; alleen bij vroege opkweek eventueel één keer oppotten."
+      }
+    },
+    {
+      "common_name": "sla",
+      "description": "",
+      "scientific_name": "Lactuca sativa",
+      "purpose": "eten",
+      "category": "bladgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Tuinsla",
+      "height_cm": 25,
+      "width_cm": 25,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, houd grond gelijkmatig vochtig",
+      "temperature": {
+        "min_c": 5,
+        "optimal_c": 18,
+        "max_c": 24
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 25,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei",
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "kan lichte vorst verdragen",
+      "diseases": {
+        "common": [
+          "bladluizen",
+          "valse meeldauw",
+          "slakken"
+        ],
+        "prevention": [
+          "goede ventilatie",
+          "vermijd water op bladeren",
+          "slakkenbestrijding"
+        ],
+        "notes": ""
+      },
+      "fertilization": "licht bemesten voor zaai",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Sla wordt in Nederland vaak direct gezaaid of als plug uitgeplant; verpotten is meestal niet nodig."
+      }
+    },
+    {
+      "common_name": "andijvie",
+      "description": "",
+      "scientific_name": "Cichorium endivia",
+      "purpose": "eten",
+      "category": "bladgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Andijvie",
+      "height_cm": 30,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, houd gelijkmatig vochtig",
+      "temperature": {
+        "min_c": 5,
+        "optimal_c": 16,
+        "max_c": 22
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 30,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep",
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "kan matige vorst verdragen; bescherm bij strenge kou",
+      "diseases": {
+        "common": [
+          "bladluizen",
+          "slakken",
+          "wortelrot"
+        ],
+        "prevention": [
+          "goede drainage",
+          "gewasrotatie",
+          "slakkenbestrijding"
+        ],
+        "notes": ""
+      },
+      "fertilization": "matig bemesten",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Andijvie in Nederlandse vollegrond meestal niet verpotten; opkweek kan direct als jonge plant uitgeplant worden."
+      }
+    },
+    {
+      "common_name": "veldsla",
+      "description": "",
+      "scientific_name": "Valerianella locusta",
+      "purpose": "eten",
+      "category": "bladgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Veldsla",
+      "height_cm": 15,
+      "width_cm": 15,
+      "perennial": "eenjarig",
+      "pitch": "halfschaduw",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, houd licht vochtig",
+      "temperature": {
+        "min_c": -5,
+        "optimal_c": 12,
+        "max_c": 18
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 10,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "okt",
+            "nov",
+            "dec",
+            "jan",
+            "feb",
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; kan onder sneeuw overleven",
+      "diseases": {
+        "common": [
+          "valse meeldauw",
+          "slakken"
+        ],
+        "prevention": [
+          "goede ventilatie",
+          "slakkenbestrijding"
+        ],
+        "notes": ""
+      },
+      "fertilization": "minimale bemesting nodig",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Veldsla wordt in Nederland doorgaans direct gezaaid; verpotten wordt meestal afgeraden."
+      }
+    },
+    {
+      "common_name": "witteboon",
+      "description": "",
+      "scientific_name": "Phaseolus vulgaris",
+      "purpose": "eten",
+      "category": "peulgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Stamslaboon",
+      "height_cm": 50,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, vooral tijdens bloei en peulvorming",
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 20,
+        "max_c": 28
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 3,
+      "sowing_distance_cm": 30,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; droog bewaren na oogst",
+      "diseases": {
+        "common": [
+          "bonenvlieg",
+          "meeldauw",
+          "roest"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "niet te dicht zaaien",
+          "goede ventilatie"
+        ],
+        "notes": ""
+      },
+      "fertilization": "weinig bemesting; binden eigen stikstof",
+      "toxic": "niet toxisch; rauwe bonen niet eetbaar, wel gekookt",
+      "repot": {
+        "recommended": false,
+        "notes": "Stamslabonen worden in Nederland vrijwel altijd direct gezaaid; verpotten is niet gebruikelijk."
+      }
+    },
+    {
+      "common_name": "stokboon",
+      "description": "",
+      "scientific_name": "Phaseolus vulgaris",
+      "purpose": "eten",
+      "category": "peulgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Stokslaboon",
+      "height_cm": 200,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, vooral tijdens bloei en peulvorming",
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 20,
+        "max_c": 28
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 3,
+      "sowing_distance_cm": 40,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder na laatste oogst",
+      "diseases": {
+        "common": [
+          "bonenvlieg",
+          "meeldauw",
+          "roest"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "niet te dicht zaaien",
+          "goede ventilatie"
+        ],
+        "notes": ""
+      },
+      "fertilization": "weinig bemesting; binden eigen stikstof",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Stokbonen worden in Nederlandse moestuinen meestal direct gezaaid; verpotten is doorgaans niet nodig."
+      }
+    },
+    {
+      "common_name": "stamdroogboon",
+      "description": "",
+      "scientific_name": "Phaseolus vulgaris",
+      "purpose": "eten",
+      "category": "peulgewassen",
+      "url": "https://moestuincursus.nl/almanak/peulgewassen/droogbonen/",
+      "height_cm": 60,
+      "width_cm": 30,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "spaarzaam; alleen extra bij langdurige droogte, want te nat vergroot kans op rot en schimmel",
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 20,
+        "max_c": 28
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 3,
+      "sowing_distance_cm": 30,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; laat peulen volledig drogen en bewaar bonen droog",
+      "diseases": {
+        "common": [
+          "bonenvlieg",
+          "roest",
+          "schimmel/rot bij nat weer"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "niet te dicht zaaien",
+          "goede ventilatie",
+          "zaaien in opgewarmde, niet te natte grond"
+        ],
+        "notes": ""
+      },
+      "fertilization": "weinig bemesting; binden eigen stikstof",
+      "toxic": "rauwe of onvoldoende verhitte bonen kunnen schadelijk zijn (lectinen); altijd goed garen",
+      "repot": {
+        "recommended": false,
+        "notes": "Stamdroogbonen worden in Nederland meestal direct gezaaid; voorzaaien kan bij koud/nat voorjaar en daarna afharden en uitplanten."
+      }
+    },
+    {
+      "common_name": "rabarber",
+      "description": "",
+      "scientific_name": "Rheum rhabarbarum",
+      "purpose": "eten",
+      "category": "wortelgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Rabarber",
+      "height_cm": 100,
+      "width_cm": 100,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, houd grond vochtig",
+      "temperature": {
+        "min_c": -10,
+        "optimal_c": 18,
+        "max_c": 24
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 80,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; mulch toevoegen in strenge winters",
+      "diseases": {
+        "common": [
+          "wortelrot",
+          "kroonrot"
+        ],
+        "prevention": [
+          "goede drainage",
+          "niet te nat houden"
+        ],
+        "notes": ""
+      },
+      "fertilization": "voeden in voorjaar met compost",
+      "toxic": "bladeren zijn giftig; alleen stelen eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Rabarber in Nederlandse vollegrond hoeft niet verpot te worden; bij potteelt alleen om de paar jaar naar grotere pot of delen."
+      }
+    },
+    {
+      "common_name": "aardbei",
+      "description": "Verdi is een eenmaaldrager, midden-vroeg juni-dragend ras met intense rode vruchten, hoge Brix-waarde en goede houdbaarheid",
+      "scientific_name": "Fragaria × ananassa 'Verdi'",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://www.fresh-forward.nl/nl/ras/verdi",
+      "height_cm": 25,
+      "width_cm": 30,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "licht zuur",
+        "notes": ""
+      },
+      "water": "regelmatig en gelijkmatig, vooral tijdens vruchtzetting",
+      "temperature": {
+        "min_c": -10,
+        "optimal_c": 20,
+        "max_c": 26
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 35,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; mulch toevoegen ter bescherming",
+      "diseases": {
+        "common": [
+          "meeldauw",
+          "grauwe schimmel",
+          "aardbeimijt"
+        ],
+        "prevention": [
+          "goede ventilatie",
+          "vermijd water op bladeren",
+          "verwijder oude bladeren"
+        ],
+        "notes": "resistent tegen stengelbasisrot, verwelkingsziekte en meeldauw"
+      },
+      "fertilization": "matig bemesten; efficiënt in voedingstoffen gebruik; extra stikstof in vegetatieve fase, kalium-calcium 7:2 tijdens bloei",
+      "toxic": "niet toxisch, volledig eetbaar",
+      "repot": {
+        "recommended": true,
+        "notes": "Bij Nederlandse potteelt aardbeienplanten na 1-2 seizoenen vernieuwen/verpotten; in vollegrond vooral verjongen via uitlopers."
+      }
+    },
+    {
+      "common_name": "knoflook",
+      "description": "",
+      "scientific_name": "Allium sativum",
+      "purpose": "eten",
+      "category": "knoflook en ui",
+      "url": "https://nl.wikipedia.org/wiki/Knoflook",
+      "height_cm": 60,
+      "width_cm": 15,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "matig, laat grond tussen watergiften opdrogen",
+      "temperature": {
+        "min_c": -10,
+        "optimal_c": 18,
+        "max_c": 24
+      },
+      "humidity": "laag",
+      "sowing_depth_cm": 3,
+      "sowing_distance_cm": 15,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei",
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "okt",
+            "nov",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; mulch kan helpen",
+      "diseases": {
+        "common": [
+          "uivlieg",
+          "witrot",
+          "roest"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "goede drainage",
+          "niet te nat houden"
+        ],
+        "notes": ""
+      },
+      "fertilization": "licht bemesten in voorjaar",
+      "toxic": "niet toxisch voor mensen, volledig eetbaar; giftig voor honden en katten",
+      "repot": {
+        "recommended": false,
+        "notes": "Knoflook in Nederland wordt meestal direct in de grond gezet; verpotten is doorgaans niet nodig."
+      }
+    },
+    {
+      "common_name": "gele mosterd",
+      "description": "Snelgroeiende mosterd voor blad en zaad; ook geschikt als groenbemester in de moestuin.",
+      "scientific_name": "Sinapis alba",
+      "purpose": "eten",
+      "category": "kruiden",
+      "url": "https://nl.wikipedia.org/wiki/Witte_mosterd",
+      "height_cm": 80,
+      "width_cm": 25,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": "Groeit op veel grondsoorten; vermijd langdurig natte grond."
+      },
+      "water": "matig; bij droogte regelmatig water geven voor gelijkmatige groei",
+      "temperature": {
+        "min_c": 5,
+        "optimal_c": 18,
+        "max_c": 28
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1.5,
+      "sowing_distance_cm": 20,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; onderwerken of verwijderen voor de winter",
+      "diseases": {
+        "common": [
+          "valse meeldauw",
+          "bladluis",
+          "knolvoet"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "luchtige standplaats",
+          "niet te dicht zaaien"
+        ],
+        "notes": "Als groenbemester tijdig maaien of onderwerken voordat de plant zaad zet."
+      },
+      "fertilization": "meestal weinig extra bemesting nodig; compost bij arme grond",
+      "toxic": "niet toxisch; zaden en jong blad zijn eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Gele mosterd wordt meestal direct gezaaid; verpotten is niet gebruikelijk."
+      }
+    },
+    {
+      "common_name": "aardappel, middelvroeg",
+      "description": "Algemene middelvroege aardappel voor teelt in vollegrond in Nederland; raskenmerken kunnen per growing worden vastgelegd.",
+      "scientific_name": "Solanum tuberosum",
+      "purpose": "eten",
+      "category": "pootgoed",
+      "url": "https://nl.wikipedia.org/wiki/Aardappel",
+      "height_cm": 70,
+      "width_cm": 35,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "licht zuur",
+        "notes": "Luchtige, diep bewerkte grond; aanaarden tijdens de teelt voor knolvorming en bescherming tegen licht."
+      },
+      "water": "regelmatig, vooral tijdens knolvorming; vermijd langdurig natte grond",
+      "temperature": {
+        "min_c": 7,
+        "optimal_c": 16,
+        "max_c": 24
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 10,
+      "sowing_distance_cm": 35,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "na oogst loof verwijderen en knollen donker, koel en droog bewaren",
+      "diseases": {
+        "common": [
+          "aardappelziekte",
+          "schurft",
+          "rhizoctonia"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "gezond pootgoed gebruiken",
+          "voldoende plantafstand voor luchtcirculatie"
+        ],
+        "notes": "Middelvroege aardappelteelt blijft gevoelig voor phytophthora in natte zomers."
+      },
+      "fertilization": "matig bemesten met kaliumrijke voeding; vermijd overmaat aan stikstof",
+      "toxic": "groene delen en groene knollen bevatten solanine en zijn niet eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Voor pootaardappelen in vollegrond is verpotten niet van toepassing."
+      }
+    },
+    {
+      "common_name": "kers-tomaat",
+      "description": "Kleine, zoete cherrytomaat voor kas, pot of warme buitenplek; vroege opkweek binnen aanbevolen.",
+      "scientific_name": "Solanum lycopersicum var. cerasiforme",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://www.rhs.org.uk/vegetables/tomatoes/grow-your-own",
+      "height_cm": 180,
+      "width_cm": 50,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, gelijkmatig vochtig; voorkom waterverzadiging",
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 22,
+        "max_c": 27
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "feb",
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": [
+            "maa",
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "apr",
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": [
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": [
+            "mei",
+            "jun",
+            "jul",
+            "aug"
+          ]
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder na laatste oogst",
+      "diseases": {
+        "common": [
+          "vroege bladschimmel",
+          "late bladschimmel",
+          "fusarium verwelking"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "goede luchtstroom",
+          "vermijd water op bladeren"
+        ],
+        "notes": ""
+      },
+      "fertilization": "gebalanceerde NPK tijdens groei, kaliumrijk tijdens vruchtzetting",
+      "toxic": "niet toxisch; onrijpe vruchten bevatten kleine hoeveelheden solanine",
+      "repot": {
+        "recommended": true,
+        "notes": "Na verspenen éénmalig oppotten kan; daarna uitplanten in kas, pot of warme buitenstandplaats."
+      }
+    },
+    {
+      "common_name": "trostomaat",
+      "description": "",
+      "scientific_name": "Solanum lycopersicum",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://nl.wikipedia.org/wiki/Tomaat",
+      "height_cm": 180,
+      "width_cm": 50,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "regelmatig, gelijkmatig vochtig; voorkom waterverzadiging",
+      "temperature": {
+        "min_c": 10,
+        "optimal_c": 22,
+        "max_c": 27
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder na laatste oogst",
+      "diseases": {
+        "common": [
+          "vroege bladschimmel",
+          "late bladschimmel",
+          "fusarium verwelking"
+        ],
+        "prevention": [
+          "gewasrotatie",
+          "goede luchtstroom",
+          "vermijd water op bladeren"
+        ],
+        "notes": ""
+      },
+      "fertilization": "gebalanceerde NPK tijdens groei, kaliumrijk tijdens vruchtzetting",
+      "toxic": "niet toxisch; onrijpe vruchten bevatten kleine hoeveelheden solanine",
+      "repot": {
+        "recommended": false,
+        "notes": "In Nederlandse teelt meestal alleen voorzaai/oppotten van zaailingen; na uitplanten niet verder verpotten."
+      }
+    },
+    {
+      "common_name": "sintjanskruid",
+      "description": "",
+      "scientific_name": "Hypericum perforatum",
+      "purpose": "sier",
+      "category": "kruiden",
+      "url": "https://nl.wikipedia.org/wiki/Sint-janskruid",
+      "height_cm": 80,
+      "width_cm": 40,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "matig, droogte-tolerant",
+      "temperature": {
+        "min_c": -15,
+        "optimal_c": 20,
+        "max_c": 28
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 30,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul",
+            "aug"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; kan terugsterven maar komt terug in voorjaar",
+      "diseases": {
+        "common": [
+          "roest",
+          "wortelrot"
+        ],
+        "prevention": [
+          "goede drainage",
+          "niet te nat houden"
+        ],
+        "notes": ""
+      },
+      "fertilization": "minimale bemesting; te veel voeding vermindert werkzame stoffen",
+      "toxic": "medicinaal gebruik; kan interacties met medicijnen veroorzaken",
+      "repot": {
+        "recommended": false,
+        "notes": "Sint-janskruid kan in Nederlandse vollegrond blijven staan; verpotten alleen nodig bij langdurige potteelt."
+      }
+    },
+    {
+      "common_name": "watermeloen",
+      "description": "Kleine rassen doen het in Nederland het best; warm en zonnig telen, bij voorkeur onder glas of op een beschutte plek.",
+      "scientific_name": "Citrullus lanatus",
+      "purpose": "eten",
+      "category": "vruchtgewassen",
+      "url": "https://groei.nl/moestuin/eten-uit-eigen-tuin/zelf-watermeloen-kweken",
+      "height_cm": 60,
+      "width_cm": 60,
+      "perennial": "eenjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "matig vochtig houden; water bij de wortels geven en blad droog houden, later in de teelt minder water",
+      "temperature": {
+        "min_c": 20,
+        "optimal_c": 22,
+        "max_c": 35
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 120,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": [
+            "jul",
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "niet winterhard; verwijder plantenresten na de oogst en verbeter de bodem met compost",
+      "diseases": {
+        "common": [
+          "meeldauw",
+          "fusarium verwelking",
+          "vruchtrot"
+        ],
+        "prevention": [
+          "warme standplaats",
+          "goede luchtcirculatie",
+          "water geven aan de voet",
+          "vruchten droog en van de grond houden"
+        ],
+        "notes": ""
+      },
+      "fertilization": "voedingsrijke bodem; tijdens vruchtzetting extra kalium",
+      "toxic": "niet toxisch, vruchtvlees eetbaar",
+      "repot": {
+        "recommended": false,
+        "notes": "Meestal direct uitplanten vanuit opkweekpot; herhaald verpotten wordt afgeraden."
+      }
+    },
+    {
+      "common_name": "duizendknoop",
+      "description": "Sterke vaste border- en bodembedekkerplant (Persicaria), niet te verwarren met de invasieve Japanse duizendknoop (Fallopia japonica).",
+      "scientific_name": "Persicaria",
+      "purpose": "sier",
+      "category": "bloemen",
+      "url": "https://www.intratuin.nl/plantengids/duizendknoop-persicaria-snoeien-verzorging",
+      "height_cm": 130,
+      "width_cm": 60,
+      "perennial": "meerjarig",
+      "pitch": "halfschaduw",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "rijk",
+        "ph": "neutraal",
+        "notes": "humusrijke, goed doorlatende grond die niet te droog wordt"
+      },
+      "water": "regelmatig; bij warmte en droogte extra water geven zodat blad niet slap hangt",
+      "temperature": {
+        "min_c": -20,
+        "optimal_c": 18,
+        "max_c": 30
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": [
+            "feb",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": [
+            "feb",
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr",
+            "sep",
+            "okt"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "maa"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "volledig winterhard; afgestorven stengels in het vroege voorjaar tot vlak boven de grond terugknippen",
+      "diseases": {
+        "common": [
+          "spint",
+          "droogtestress (slap blad)"
+        ],
+        "prevention": [
+          "bodem vochtig houden in droge perioden",
+          "jaarlijks compost of bladaarde toevoegen"
+        ],
+        "notes": ""
+      },
+      "fertilization": "jaarlijks compost geven in winter of vroeg voorjaar, vooral op zandgrond",
+      "toxic": "niet giftig",
+      "repot": {
+        "recommended": true,
+        "notes": "kan goed in pot; kies ruime pot met drainagegaten en houd de grond gelijkmatig vochtig"
+      }
+    },
+    {
+      "common_name": "blauwe druifjes",
+      "description": "Voorjaarsbol met compacte trossen blauwe bloemen; geschikt voor border, pot en verwildering.",
+      "scientific_name": "Muscari armeniacum",
+      "purpose": "sier",
+      "category": "bloemen",
+      "url": "https://nl.wikipedia.org/wiki/Blauwe_druifjes",
+      "height_cm": 20,
+      "width_cm": 10,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "leem",
+        "drainage": "goed drainerend",
+        "richness": "normaal",
+        "ph": "neutraal",
+        "notes": "bolgrond liefst niet te nat in winter; goed doorlatende grond"
+      },
+      "water": "matig; tijdens groei licht vochtig, na bloei droger",
+      "temperature": {
+        "min_c": -20,
+        "optimal_c": 12,
+        "max_c": 22
+      },
+      "humidity": "normaal",
+      "sowing_depth_cm": 8,
+      "sowing_distance_cm": 8,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "sep",
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "sep",
+            "okt",
+            "nov"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "maa",
+            "apr"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "mei",
+            "jun"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "winterhard; laat blad afsterven na bloei en voorkom langdurig natte grond",
+      "diseases": {
+        "common": [
+          "bolrot",
+          "slakkenvraat op jong blad"
+        ],
+        "prevention": [
+          "goede drainage",
+          "luchtige standplaats",
+          "bescherm jonge scheuten tegen slakken"
+        ],
+        "notes": ""
+      },
+      "fertilization": "lichte gift organische mest of compost in najaar of vroege voorjaar",
+      "toxic": "licht giftig bij inname voor mens en huisdieren",
+      "repot": {
+        "recommended": true,
+        "notes": "bollen om de paar jaar opnemen en scheuren bij te dichte pollen"
+      }
+    },
+    {
+      "common_name": "lavendel - bloem",
+      "description": "",
+      "scientific_name": "Lavandula angustifolia",
+      "purpose": "sier",
+      "category": "bloemen",
+      "url": "",
+      "height_cm": 60,
+      "width_cm": 60,
+      "perennial": "meerjarig",
+      "pitch": "zon",
+      "soil": {
+        "texture": "zand",
+        "drainage": "zeer goed drainerend",
+        "richness": "arm",
+        "ph": "neutraal",
+        "notes": ""
+      },
+      "water": "diep, onregelmatig; droogte-tolerant als eenmaal gevestigd",
+      "temperature": {
+        "min_c": -10,
+        "optimal_c": 20,
+        "max_c": 25
+      },
+      "humidity": "laag",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 75,
+      "preferred_activities": [
+        {
+          "activity_name": "Seeding",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Seeding",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Planting",
+          "location": "buiten",
+          "months": [
+            "apr",
+            "mei"
+          ]
+        },
+        {
+          "activity_name": "Planting",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "buiten",
+          "months": [
+            "jun",
+            "jul"
+          ]
+        },
+        {
+          "activity_name": "Reaping",
+          "location": "kas",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "binnen",
+          "months": []
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "buiten",
+          "months": [
+            "aug",
+            "sep"
+          ]
+        },
+        {
+          "activity_name": "Pruning",
+          "location": "kas",
+          "months": []
+        }
+      ],
+      "winter_prep": "mulch en bescherming bieden in strenge winters",
+      "diseases": {
+        "common": [
+          "wortelrot"
+        ],
+        "prevention": [
+          "uitstekende drainage"
+        ],
+        "notes": ""
+      },
+      "fertilization": "minimale bemesting",
+      "toxic": "eetbaar in kleine hoeveelheden",
+      "repot": {
+        "recommended": true,
+        "notes": "zelden verpotten; ververs grond elke ~24 maanden"
+      }
+    }
+  ],
+  "webshops": [
+    {
+      "name": "De Hobbytuinder",
+      "url": "https://www.dehobbytuinder.nl/",
+      "zoek_url_template": "https://www.dehobbytuinder.nl/?s={query}&post_type=product"
+    },
+    {
+      "name": "Vreeken",
+      "url": "https://www.vreeken.nl/",
+      "zoek_url_template": "https://www.vreeken.nl/zoeken/{query}"
+    },
+    {
+      "name": "Van der Wal Zaden",
+      "url": "https://www.zaadhandelvanderwal.nl/",
+      "zoek_url_template": "https://www.zaadhandelvanderwal.nl/nl/shop/zoeken?q={query}"
+    },
+    {
+      "name": "Gartenland",
+      "url": "https://www.gartenland.com/",
+      "zoek_url_template": "https://www.gartenland.com/search?q={query}"
+    },
+    {
+      "name": "FloraSelf",
+      "url": "https://www.floraselfstore.com/",
+      "zoek_url_template": ""
+    }
+  ],
+  "seeds": [
+    {
+      "plant_id": "watermeloen",
+      "variant_name": "",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 60,
+      "valid_until_year": 2028,
+      "bought_on": "2026-03-07",
+      "webshop_name": "Gartenland",
+      "product_url": ""
+    },
+    {
+      "plant_id": "courgette",
+      "variant_name": "",
+      "webshop_name": "",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 60,
+      "valid_until_year": 2026
+    },
+    {
+      "plant_id": "tomaat",
+      "variant_name": "Moneymaker",
+      "valid_until_year": 2029,
+      "bought_on": "2026-03-01",
+      "webshop_name": "Van der Wal Zaden",
+      "product_url": "https://www.zaadhandelvanderwal.nl/nl/shop/zaadgids-online/groentezaden-fijnzadig/tomaten/moneymaker",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50
+    },
+    {
+      "plant_id": "paprika",
+      "valid_until_year": 2029,
+      "variant_name": "Yolo Wonder",
+      "bought_on": "2025-02-01",
+      "webshop_name": "FloraSelf",
+      "product_url": "https://www.floraselfstore.com/floraself-paprika-yolo-wonder-groentezaden/",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 45
+    },
+    {
+      "plant_id": "aubergine",
+      "valid_until_year": 2026,
+      "variant_name": "Falcon",
+      "bought_on": "2024-03-01",
+      "webshop_name": "FloraSelf",
+      "product_url": "https://www.hornbach.nl/p/floraself-select-groentezaden-aubergine-falcon-8-st/12011117/",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 60
+    },
+    {
+      "plant_id": "peper",
+      "valid_until_year": 2028,
+      "variant_name": "Yalova Carliston",
+      "bought_on": "2026-03-21",
+      "webshop_name": "Vreeken",
+      "product_url": "https://www.vreeken.nl/208050-peper-carliston-mild-yalova-carliston-341",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 40
+    },
+    {
+      "plant_id": "peper",
+      "valid_until_year": 2029,
+      "variant_name": "Jalapeno",
+      "bought_on": "2026-03-21",
+      "webshop_name": "Van der Wal Zaden",
+      "product_url": "https://www.zaadhandelvanderwal.nl/nl/shop/biologisch-geteelde-zaden/biologisch-geteelde-groentezaden/paprika-pepers-biologisch-geteeld/pepers-jalapeno-bio",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 40
+    },
+    {
+      "plant_id": "kers-tomaat",
+      "valid_until_year": 2027,
+      "variant_name": "Horti Tops",
+      "bought_on": "2026-03-21",
+      "webshop_name": "De Hobbytuinder",
+      "product_url": "https://www.dehobbytuinder.nl/zaden/groentezaden/tomaten/tomaten-cherry-4-kleuren-solanum-lycopersicum/",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50
+    },
+    {
+      "plant_id": "aardappel, middelvroeg",
+      "valid_until_year": 2026,
+      "variant_name": "Linda",
+      "bought_on": "2026-04-01",
+      "product_url": "https://www.vreeken.nl/406350-aardappels-linda",
+      "sowing_depth_cm": 10,
+      "sowing_distance_cm": 45
+    },
+    {
+      "plant_id": "gele mosterd",
+      "valid_until_year": 2027,
+      "variant_name": "",
+      "bought_on": "2026-04-10",
+      "webshop_name": "De Hobbytuinder",
+      "product_url": "https://www.dehobbytuinder.nl/zaden/kruiden/gele-mosterd-sinapis-alba-2/",
+      "sowing_depth_cm": 1.5,
+      "sowing_distance_cm": 15
+    },
+    {
+      "plant_id": "lenteui",
+      "valid_until_year": 2028,
+      "variant_name": "White Lisbon",
+      "bought_on": "2026-04-10",
+      "webshop_name": "De Hobbytuinder",
+      "product_url": "https://www.dehobbytuinder.nl/zaden/groentezaden/uien/uien-bosuien-white-lisbon-allium-cepa/",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 5
+    },
+    {
+      "plant_id": "snoepkomkommer",
+      "valid_until_year": 2028,
+      "variant_name": "Kaikura F1",
+      "bought_on": "2026-04-10",
+      "webshop_name": "De Hobbytuinder",
+      "product_url": "https://www.dehobbytuinder.nl/zaden/bio-snack-komkommer-kaikura-f1-cucumis-sativus/",
+      "sowing_depth_cm": 2,
+      "sowing_distance_cm": 50
+    },
+    {
+      "plant_id": "duizendknoop",
+      "valid_until_year": 2026,
+      "variant_name": "",
+      "bought_on": "2025-04-11",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 50
+    },
+    {
+      "plant_id": "sintjanskruid",
+      "valid_until_year": 2026,
+      "variant_name": "",
+      "bought_on": "2026-04-11",
+      "sowing_depth_cm": 0.5,
+      "sowing_distance_cm": 30
+    },
+    {
+      "plant_id": "blauwe druifjes",
+      "valid_until_year": 2026,
+      "variant_name": "",
+      "bought_on": "2026-04-11",
+      "sowing_depth_cm": 8,
+      "sowing_distance_cm": 8
+    },
+    {
+      "plant_id": "lavendel - bloem",
+      "valid_until_year": 2026,
+      "variant_name": "",
+      "bought_on": "2026-04-11",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 75
+    },
+    {
+      "plant_id": "lavendel - kruid",
+      "valid_until_year": 2026,
+      "variant_name": "",
+      "bought_on": "2026-04-11",
+      "sowing_depth_cm": 1,
+      "sowing_distance_cm": 75
     }
   ]
 }
